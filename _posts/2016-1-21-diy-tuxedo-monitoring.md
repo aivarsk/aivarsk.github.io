@@ -26,7 +26,7 @@ You can find more information about this in Tuxedo reference manuals TM_MIB(5) a
 
 tmtrace allows you to trace the execution of Tuxedo application by writing records about ATMI calls to user log. You can write a program that parses user log and extracts useful information. Compared to information provided by MIB you can find out how much time each service execution took, which services it called, how much time it waited on other services to return, etc.
 
-```
+<pre>
 111401.mordor!IN.6769.3053347840.0: TRACE:at:  { tpservice({"IN", 0x0, 0x0x1bca548, 4096, 0, 0, {1453367641, 0, 5}})
 111401.mordor!IN.6769.3053347840.0: TRACE:at:    { tpforward("HUB", 0x0x1bca548, 0, 0x0)
 111401.mordor!IN.6769.3053347840.0: TRACE:ia:      { tpacall("HUB", 0x0x1bca548, 0, 0x1000002)
@@ -38,7 +38,7 @@ tmtrace allows you to trace the execution of Tuxedo application by writing recor
 111401.mordor!HUB.6768.1951171584.0: TRACE:at:  { tpservice({"HUB", 0x0, 0x0x19d3548, 4096, 0, 0, {1453367641, 0, 5}})
 111401.mordor!HUB.6768.1951171584.0: TRACE:at:    { tpacall("SVCA", 0x0x19d3548, 0, 0xc)
 111401.mordor!HUB.6768.1951171584.0: TRACE:at:    } tpacall = 0 [CLIENTID {1453367641, 0, 5}]
-```
+</pre>
 
 Fortunately since Tuxedo 9 you can use tputrace(3c) to implement your own function that is called on each trace point. So instead of parsing user log you can reduce the performance penalty by deciding what to write and skip trace points like tpalloc()/tpfree(), when to write it (aggregate) and where to write it (shared memory, network, etc.). You can also use tputrace() to store requests or responses of some services to logfiles or database.
 
