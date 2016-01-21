@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle database and TUXEDO for more than 13 years now. I tinker with internals of Oracle and various other software.
+My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 13 years now. I tinker with internals of Oracle and various other software.
 
 Some code I have written both bad and "good enough":
 
