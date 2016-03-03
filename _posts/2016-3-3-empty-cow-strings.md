@@ -47,9 +47,11 @@ std::cout << "'" << empty << "' '" << empty2 << "'\n";
 
 C++ code that checks the size of string will continue to work (like std::cout) but C-style strings and I/O will look really strange:
 
+```
 '' ''
 '?' '?'
 '' ''
+```
 
 Oh by the way, GCC5 implicitly limits the scope of damage in this case as well:
 
