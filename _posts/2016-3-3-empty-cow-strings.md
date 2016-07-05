@@ -45,7 +45,7 @@ printf("'%s' '%s'\n", empty.c_str(), empty2.c_str());
 std::cout << "'" << empty << "' '" << empty2 << "'\n";
 ```
 
-C++ code that checks the size of string will continue to work (like std::cout) but C-style strings and I/O will look really strange:
+C++ code that checks the size of the string will continue to work (like std::cout) but C-style strings and I/O will look really strange:
 
 ```
 '' ''
