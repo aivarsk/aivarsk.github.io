@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 13 years now. I tinker with internals of Oracle and various other software.
+My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 16 years now. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
 
-Some code I have written both bad and "good enough":
+Some other code I have written both bad and "good enough":
 
 - [Scruffy UML](https://github.com/aivarsk/scruffy) - creates UML diagrams from textual description.
 - [libvmod-rewrite](https://github.com/aivarsk/libvmod-rewrite) - a plugin for Varnish (proxy server) that allows to modify cached pages.
