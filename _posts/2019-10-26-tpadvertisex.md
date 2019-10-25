@@ -1,6 +1,6 @@
 ---
 layout: post
-title: tpadvertisex(3c)\: a new cool Oracle Tuxedo 12.2 feature
+title: tpadvertisex(3c)&#58; a new cool Oracle Tuxedo 12.2 feature
 ---
 
 A service call in Oracle Tuxedo ends up in some System V message queue. What happens next depends on the configuration in `UBBCONFIG`: 
