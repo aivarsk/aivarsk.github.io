@@ -25,4 +25,4 @@ There are 2 ways to change the behavior of `tpgetrply()`:
 One more issue I have to mention is: if transaction timeout is not used there may be cases when the caller has received the blocking timeout but the request is still in the request queue of the callee. No one cancels the request and the callee will process it although no one is waiting for the response anymore. I think Oracle TSAM has a feature that allows dropping such requests but it's an additional product for an additional price. So if your services take several seconds to complete it might be a good idea to add "request expiry time" field to the message and drop expired requests in your program code.
 
 
-[Here is a simple code to investigate blocking `tpgetrply()`](https://github.com/fuxedo/fuxedo-examples/tree/master/blocking-tpgetrply)
+[Here is a simple code to investigate blocking `tpgetrply()`](https://github.com/aivarsk/tuxedo-examples/tree/master/blocking-tpgetrply)
