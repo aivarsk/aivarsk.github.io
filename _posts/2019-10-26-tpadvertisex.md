@@ -15,7 +15,7 @@ I have a couple of use cases for that:
 - notifications to reload caches 
 - writing buffers to disk, closing files, committing database transactions 
  
-Oracle Tuxedo 12.2 adds a new [`tpadvertisex()`](https://docs.oracle.com/cd/E72452_01/tuxedo/docs1222/rf3c/rf3c.html#2548645) function call that allows advertising unique services. It requires a new [`SECONDARYRQ`](https://docs.oracle.com/cd/E72452_01/tuxedo/docs1222/rf5/rf5.html#1532198) parameter in `UBBCONFIG` that creates a new private message queue for each server. Each server can listen on two queues now. That should have the best of both worlds: load balancing, availability and unique service for each server that I can call when needed. 
+Oracle Tuxedo 12.2 adds a new [`tpadvertisex()` function call](https://docs.oracle.com/cd/E72452_01/tuxedo/docs1222/rf3c/rf3c.html#2548645) that allows advertising unique services. It requires a new [`SECONDARYRQ` parameter](https://docs.oracle.com/cd/E72452_01/tuxedo/docs1222/rf5/rf5.html#1532198) in `UBBCONFIG` that creates a new private message queue for each server. Each server can listen on two queues now. That should have the best of both worlds: load balancing, availability and unique service for each server that I can call when needed. 
  
 But it does not work. For now. 
 
