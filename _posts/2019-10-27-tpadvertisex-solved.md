@@ -15,7 +15,7 @@ So I was working on some other project creating Python bindings for Oracle Tuxed
 #define TPSECONDARYRQ       0x00000002 /* advertise the service on the secondary queue for the MSSQ server*/
 ```
 
-Turns out this is just a documentation bug. I tried calling tpadvertisex with both flags set and it worked as expected: I got a unique service for servers in MSSQ configuration. But since 2 flag values can be combined I also explored each of them. Until Oracle updates the documentation here are my observations:
+Turns out this is just a documentation bug. I tried calling `tpadvertisex()` with both flags set and it worked as expected: I got a unique service for servers in MSSQ configuration. But since 2 flag values can be combined I also explored each of them. Until Oracle updates the documentation here are my observations:
 
 - `flags=0` - `tpadvertisex()` works exactly like `tpadvertise()` does and advertises services on the main queue.
 
