@@ -25,4 +25,4 @@ Turns out this is just a documentation bug. I tried calling `tpadvertisex()` wit
 
 - `flags=TPSINGLETON+TPSECONDARYRQ` - `tpadvertisex()` advertises the service on the secondary request queue or returns `TPENOSECONDARYRQ` if it is not configured. It also checks that the service is unique and returns `TPENOSINGLETON` otherwise. Again, MIB returned `TA_RQADDR=UNKNOWN` for these services.
 
-[Here is a demo of `tpadvertisex()`](https://github.com/aivarsk/tuxedo-examples/tree/master/tpadvertisex)
+[Here is a demo of `tpadvertisex()`](https://github.com/fuxedo/tuxedo-examples/tree/master/tpadvertisex)

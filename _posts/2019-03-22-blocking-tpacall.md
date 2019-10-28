@@ -32,4 +32,4 @@ The second option is to call `tpacall()` with `TPNOTIME` flag - possibly blockin
 
 But the best solution, of course, is to use big queues and throttling to prevent queues from filling up and having to deal with this problem in the first place.
 
-[Here is a simple code to investigate blocking `tpacall()`](https://github.com/aivarsk/tuxedo-examples/tree/master/blocking-tpacall)
+[Here is a simple code to investigate blocking `tpacall()`](https://github.com/fuxedo/tuxedo-examples/tree/master/blocking-tpacall)

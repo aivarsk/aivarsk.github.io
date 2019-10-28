@@ -23,4 +23,4 @@ At first, I was worried when MIB's `T_SVCGRP` showed too many duplicate services
 
 I created a new service request and hope to see a fix soon.
 
-[Here is a simple code with `tpadvertisex()` that does not work](https://github.com/aivarsk/tuxedo-examples/tree/master/tpadvertisex)
+[Here is a simple code with `tpadvertisex()` that does not work](https://github.com/fuxedo/tuxedo-examples/tree/master/tpadvertisex)
