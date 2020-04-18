@@ -58,7 +58,7 @@ Turns out that `tpgetrply()` gives up the transaction, not `tpacall()` which mak
 
 So here is a rule of thumb:
 
-- Use `tpacall()` only with `TPNOTRAN` flag unless you have a good reason
+- Use `tpacall()` only with `TPNOTRAN` flag unless you have a good reason not to.
 - Double-check your `tpcall()` flags for performance-critical paths and add `TPNOTRAN` flags where possible. Giving up the transaction (`xa_end` + `xa_start`) costs two roundtrips to the database.
 
 [Here is a simple code to investigate `tpacall()` and XA transactions](https://github.com/fuxedo/tuxedo-examples/tree/master/xa)
