@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 16 years now. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
+My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 17 years now. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
 
 Some other code I have written both bad and "good enough":
 
@@ -11,8 +11,8 @@ Some other code I have written both bad and "good enough":
 - [libvmod-rewrite](https://github.com/aivarsk/libvmod-rewrite) - a plugin for Varnish (proxy server) that allows to modify cached pages.
 - [pattern-matcher](https://github.com/aivarsk/pattern-matcher) and [cloud-instances](https://github.com/aivarsk/cloud-instances) are winning entries of Latvia Java User Group programming contest. The first one was written while I was still drunk after a party.
 - [Scrapy proxies](https://github.com/aivarsk/scrapy-proxies) - Scrapy (web scraping framework) extension for using random proxies. Some people find it useful.
-- ... and everything else on [github.com/aivarsk](https://github.com/aivarsk)
-- ... and something more on [stackoverflow.com/story/aivarsk](https://stackoverflow.com/story/aivarsk)
+- ... and other Open Source on [github.com/aivarsk](https://github.com/aivarsk)
+- ... and info about Closed Source on [stackoverflow.com/story/aivarsk](https://stackoverflow.com/story/aivarsk)
 
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
