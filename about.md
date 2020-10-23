@@ -12,7 +12,7 @@ Some other code I have written both bad and "good enough":
 - [pattern-matcher](https://github.com/aivarsk/pattern-matcher) and [cloud-instances](https://github.com/aivarsk/cloud-instances) are winning entries of Latvia Java User Group programming contest. The first one was written while I was still drunk after a party.
 - [Scrapy proxies](https://github.com/aivarsk/scrapy-proxies) - Scrapy (web scraping framework) extension for using random proxies. Some people find it useful.
 - ... and other Open Source on [github.com/aivarsk](https://github.com/aivarsk)
-- ... and info about Closed Source on [stackoverflow.com/story/aivarsk](https://stackoverflow.com/story/aivarsk)
+- ... and info about Closed Source on [stackoverflow.com/story/aivarsk](https://stackoverflow.com/cv/aivarsk)
 
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
