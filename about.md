@@ -5,6 +5,8 @@ title: About
 
 My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 17 years now. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
 
+I'm writing a book about developing modern Oracle Tuxedo applications using Python 3, stay tuned!
+
 Some other code I have written both bad and "good enough":
 
 - [Scruffy UML](https://github.com/aivarsk/scruffy) - creates UML diagrams from textual description.
