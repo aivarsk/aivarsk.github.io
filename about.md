@@ -7,7 +7,7 @@ My name is Aivars Kalvans. I wrote software (C, C++ and Python) that runs on Ora
 
 I have written a book about writing modern Oracle Tuxedo using Python:
 
-[<img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=180107058X&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=aivarsk-20">Oracle Tuxedo</a>]
+[<img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=180107058X&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=aivarsk-20">Oracle Tuxedo</img>]
  (https://amzn.to/3ljktiH)
  
 I also conduct Oracle Tuxedo training for developers and administrators, contact me for more information.
