@@ -3,9 +3,14 @@ layout: page
 title: About
 ---
 
-My name is Aivars Kalvans. I write software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 17 years now. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
+My name is Aivars Kalvans. I wrote software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 18 years. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
 
-I'm writing a book about developing modern Oracle Tuxedo applications using Python 3, stay tuned!
+I have written a book about writing modern Oracle Tuxedo using Python:
+
+[[Oracle Tuxedo](https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=US&ASIN=180107058X&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=aivarsk-20)]
+ (https://amzn.to/3ljktiH)
+ 
+I also conduct Oracle Tuxedo training for developers and administrators, contact me for more information.
 
 Some other code I have written both bad and "good enough":
 
