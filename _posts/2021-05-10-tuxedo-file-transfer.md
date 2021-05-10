@@ -101,8 +101,20 @@ for i in range(7400, 7800):
     t.tpgetrply(cd)
 ```
 
+By running the program, you will get output like this:
 
-As I mentioned before, file transfer is not bad but you could monitor how many messages are sent through files compared to the number of service calls or transactions per second.
+```bash
+tpacall(7798 bytes)
+        IN_CREATE /tmp/TUXRUwjPT317790016
+tpgetrply()
+        IN_CREATE /tmp/TUXZP86iD844330816
+tpacall(7799 bytes)
+        IN_CREATE /tmp/TUX1llyD1317790016
+tpgetrply()
+        IN_CREATE /tmp/TUXNuGq7K844330816
+```
+
+As I mentioned before, file transfer is not bad but you could monitor how many messages are sent through files compared to the number of service calls or transactions per second. And this simple Python program using the `inotify` library could be part of your Oracle Tuxedo application monitoring.
 
 
 Read about this and other things about Oracle Tuxedo in [my book about Modernizing Oracle Tuxedo Applications with Python](https://amzn.to/3ljktiH).
