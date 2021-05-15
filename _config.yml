@@ -5,9 +5,9 @@ permalink:           pretty
 #relative_permalinks: true
 
 # Setup
-title:               Irrational Number
-tagline:             ""
-url:                 http://aivarsk.github.io
+title:               Aivars Kalvāns
+tagline:             "Tinkering with Oracle Tuxedo and other software"
+url:                 http://aivarsk.com
 paginate:            1
 baseurl:             ""
 
@@ -20,8 +20,8 @@ sass:
 
 # About/contact
 author:
-  name:              Aivars Kalvans
-  url:               http://github.com/aivarsk
+  name:              Aivars Kalvāns
+  url:               http://aivarsk.com
   email:             aivars.kalvans@gmail.com
 
 # Custom vars
