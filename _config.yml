@@ -25,3 +25,5 @@ author:
   email:             aivars.kalvans@gmail.com
 
 # Custom vars
+plugins:
+  - jekyll-seo-tag
