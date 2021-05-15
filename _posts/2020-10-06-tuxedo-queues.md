@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Oracle Tuxedo queues illustrated
+tags: oracle tuxedo ipc msgsnd msgrcv
 ---
 
 [I did investigate `tpacall()` before](http://aivarsk.com/2019/03/22/blocking-tpacall/) and you can find more details there.

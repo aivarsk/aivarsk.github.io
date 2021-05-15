@@ -1,6 +1,7 @@
 ---
 layout: post
 title: tpacall(3c) and XA transactions
+tags: oracle tuxedo xa tpcall tpacall tpgetrply xid
 ---
 
 Oracle Tuxedo allows us to develop transactional service-oriented (or microservice) applications easily and performance is quite good. So easy and performant that I would not care about implementing sagas or compensating transactions most of the time.

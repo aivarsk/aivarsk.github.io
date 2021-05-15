@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tracking Oracle Tuxedo file transfer
+tags: oracle tuxedo msgsnd file transfer
 ---
 
 Oracle Tuxedo uses System V IPC message queues for sending messages between processes. These queues live inside the OS kernel and are limited in size:

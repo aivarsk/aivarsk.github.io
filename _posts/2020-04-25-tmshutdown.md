@@ -1,6 +1,7 @@
 ---
 layout: post
 title: tmshutdown and MSSQ
+tags: oracle tuxedo tpcall tmshutdown msgrcv msgsnd ipc
 ---
 
 A server waits for a new incoming service call by using `msgrcv()` system call on IPC queue. The call blocks until a message is available or a signal interrupts the system call.
