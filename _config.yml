@@ -27,3 +27,9 @@ social:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
+
+
+collections:
+  tags:
+    output: true
+    permalink: tags/:path/
