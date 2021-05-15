@@ -16,6 +16,14 @@ author:
   url:               http://aivarsk.com
   email:             aivars.kalvans@gmail.com
 
+social:
+  name: Aivars Kalvāns
+  links:
+    - https://github.com/aivarsk
+    - https://www.linkedin.com/in/aivarsk
+    - https://stackoverflow.com/story/aivarsk
+    - https://twitter.com/aivarskalvans
+
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
