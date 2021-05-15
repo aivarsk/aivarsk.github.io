@@ -32,4 +32,4 @@ plugins:
 collections:
   tags:
     output: true
-    permalink: tag/:path/
+    permalink: tags/:path/
