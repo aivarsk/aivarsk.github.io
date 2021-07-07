@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The hitchhiker's guide to the `tpcall` flags
+title: The hitchhiker's guide to the tpcall flags
 tags: tuxedo tpcall msgsnd flags
 ---
 
