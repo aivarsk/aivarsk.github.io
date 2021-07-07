@@ -65,7 +65,7 @@ If the caller is in a transaction, Tuxedo gives up the transaction using `xa_end
 
 > If a signal interrupts any underlying system calls, then the interrupted system call is reissued.
 
-Assuming your application receives a signal and you have set up a handler for the signal (otherwise the application terminates), Tuxedo will retry the interrupted `msgsnd` call.
+Assuming your application receives a signal and you have set up a handler for the signal (otherwise the application may terminate), Tuxedo will retry the interrupted `msgsnd` call.
 
 
 ### TPNOCOPY
