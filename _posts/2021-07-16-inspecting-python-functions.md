@@ -28,7 +28,8 @@ TypeError: f() got some positional-only arguments passed as keyword arguments: '
 
 Arguments  `kwd1` and `kwd2` after the `*` are keyword-only arguments. You can call the following function like `f(a=1, b=2)` and `f(b=2, a=1)` but not like `f(1, 2)` or you will get a `TypeError`:
 
-```>>> def f(*, a, b): pass
+```python
+>>> def f(*, a, b): pass
 ... 
 >>> f(a=1, b=2)
 >>> f(b=2, a=1)
