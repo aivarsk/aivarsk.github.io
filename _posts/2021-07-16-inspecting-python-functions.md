@@ -73,7 +73,7 @@ How to retrieve the number of arguments this function accepts? Python has a lot 
 
 To get the number of function arguments you have to sum `__code__.co_argcount` and `__code__.co_kwonlyargcount`. However, `__code__.co_posonlyargcount` is already included in `__code__.co_argcount`.
 
-To find the names of arguments, event the positional-only ones (!), we have to look at `__code__.co_varnames`. It contains both the function arguments and local variables and we have to take only the first elements matching the argument count:
+To find the names of arguments, even the positional-only ones (!), we have to look at `__code__.co_varnames`. It contains both the function arguments and local variables and we have to take only the first elements matching the argument count:
 
 ```python
 >>> f.__code__.co_varnames[:f.__code__.co_argcount+f.__code__.co_kwonlyargcount]
