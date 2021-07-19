@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Inspecting Python function
+title: Inspecting Python functions
 tags: python c++ pybind11
 ---
 
