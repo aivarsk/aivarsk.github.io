@@ -15,7 +15,8 @@ Several articles talk about tuning Kafka for latency. Even `librdkafka` mentions
 
 Parameter `queue.buffering.max.ms` is the same `linger.ms` mentioned by other sources according to [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md). But that's about the only *real* advice those articles provide. Some go into replication factor and number of acknowledgments and sacrificing durability for performance.
 
-I wrote short python code that produces messages sequentally in a loop and calculates the time it takes:
+I wrote short Python code that produces messages sequentally in a loop and calculates the time it takes:
+
 ```python
 for _ in range(100):
     producer.produce(topic='test', value=value, key=key, on_delivery=delivery_callback)
