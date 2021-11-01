@@ -11,8 +11,9 @@ The code I am working with uses [Confluent Kafka Python library](https://github.
 Several articles talk about tuning Kafka for latency. Even `librdkafka` mentions the two most important configuration properties for performance tuning:
 
 - `batch.num.messages` - the minimum number of messages to wait for to accumulate in the local queue before sending off a message set.
-`queue.buffering.max.ms` - how long to wait for batch.num.messages to fill up in the local queue.
-- `queue.buffering.max.ms` is the same `linger.ms` mentioned by other sources according to [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md). But that's about the only *real* advice those articles provide. Some go into replication factor and number of acknowledgments and sacrificing durability for performance.
+- `queue.buffering.max.ms` - how long to wait for batch.num.messages to fill up in the local queue.
+
+Parameter `queue.buffering.max.ms` is the same `linger.ms` mentioned by other sources according to [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md). But that's about the only *real* advice those articles provide. Some go into replication factor and number of acknowledgments and sacrificing durability for performance.
 
 I wrote short python code that produces messages sequentally in a loop and calculates the time it takes:
 ```python
