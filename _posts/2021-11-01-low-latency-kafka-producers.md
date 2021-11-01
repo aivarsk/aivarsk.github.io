@@ -6,7 +6,7 @@ tags: python c++ kafka latency
 
 TL;DR Don't forget to set `socket.nagle.disable=True` to disable Nagle's algorithm
 
-The code I am working with uses [Confluent Kafka Python library](https://github.com/confluentinc/confluent-kafka-python) that calls [librdkafka C++ library](https://github.com/edenhill/librdkafka) underneath. The code uses synchronous messaging: produces events one-by-one and ensures it is persisted in Kafka topic by waiting for acknowledgments from all replicas. This code is sensitive to latency and not so much to throughput.
+The code I am working with uses [Confluent Kafka Python library](https://github.com/confluentinc/confluent-kafka-python) that calls [librdkafka C++ library](https://github.com/edenhill/librdkafka) underneath. The code does synchronous messaging: it produces events one-by-one and ensures event is persisted in Kafka topic by waiting for acknowledgments from all replicas. This code is sensitive to latency and not so much to throughput.
 
 Several articles talk about tuning Kafka for latency. Even `librdkafka` mentions the two most important configuration properties for performance tuning:
 
