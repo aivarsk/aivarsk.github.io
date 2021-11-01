@@ -59,9 +59,10 @@ Turns out the library is really waiting more than 40ms for a response from the b
 
 Hopelessly going through [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md), I found a parameter named `socket.nagle.disable` with the default value of `False`. This setting keeps [Nagle's algorithm](https://en.wikipedia.org/wiki/Nagle%27s_algorithm) enabled to trade latency for throughput at the kernel level. I grepped through the source code and saw that `socket.nagle.disable` sets  `TCP_NODELAY` parameter on the socket which is something I do when writing C code.
 
-So the mystery was solved. I set the `socket.nagle.disable` to `True` and my code finally started to perform by producing more than 250 messages per second:
+So the mystery was solved. I set the `socket.nagle.disable` to `True` and my code finally started to perform by producing more than 250 messages per second with less than 3ms round-trip time:
 
-```%7|1635781927.658|SEND|rdkafka#producer-3| [thrd:ssl://xxx.yyy.zzz.amazonaws.com:9]: ssl://xxx.yyy.zzz.amazonaws.com:9094/3: Sent ProduceRequest (v7, 2219 bytes @ 0, CorrId 37)
+```
+%7|1635781927.658|SEND|rdkafka#producer-3| [thrd:ssl://xxx.yyy.zzz.amazonaws.com:9]: ssl://xxx.yyy.zzz.amazonaws.com:9094/3: Sent ProduceRequest (v7, 2219 bytes @ 0, CorrId 37)
 %7|1635781927.661|RECV|rdkafka#producer-3| [thrd:ssl://xxx.yyy.zzz.amazonaws.com:9]: ssl://xxx.yyy.zzz.amazonaws.com:9094/3: Received ProduceResponse (v7, 89 bytes, CorrId 37, rtt 2.88ms)
 ```
 
@@ -72,4 +73,4 @@ Long story short, to optimize producers for latency, you should set both:
 - `socket.nagle.disable` = True
 - `queue.buffering.max.ms` = 0
 
-I thinkg you should also set `socket.nagle.disable` for low latency consumers to deliver acknowledgments as soon as possible.
+I think you should also set `socket.nagle.disable` for low latency consumers to deliver acknowledgments as soon as possible.
