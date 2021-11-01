@@ -4,16 +4,16 @@ title: Optimizing Kafka producers for latency
 tags: python c++ kafka latency
 ---
 
-TL;DR Set `socket.nagle.disable=True` to disable Nagle's algorithm
+TL;DR Don't forget to set `socket.nagle.disable=True` to disable Nagle's algorithm
 
-The code I am working with uses (Confluent Kafka Python library)[https://github.com/confluentinc/confluent-kafka-python] that calls (librdkafka C++ library)[https://github.com/edenhill/librdkafka] underneath. The code uses synchronous messaging: produces events one-by-one and ensures it is persisted in Kafka topic by waiting for acknowledgments from all replicas. This code is sensitive to latency and not so much to throughput.
+The code I am working with uses [Confluent Kafka Python library](https://github.com/confluentinc/confluent-kafka-python) that calls [librdkafka C++ library](https://github.com/edenhill/librdkafka) underneath. The code uses synchronous messaging: produces events one-by-one and ensures it is persisted in Kafka topic by waiting for acknowledgments from all replicas. This code is sensitive to latency and not so much to throughput.
 
 Several articles talk about tuning Kafka for latency. Even `librdkafka` mentions the two most important configuration properties for performance tuning:
 
 `batch.num.messages` - the minimum number of messages to wait for to accumulate in the local queue before sending off a message set.
 `queue.buffering.max.ms` - how long to wait for batch.num.messages to fill up in the local queue.
 
-`queue.buffering.max.ms` is the same `linger.ms` mentioned by other sources according to (librdkafka documentation)[https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md]. But that's about the only *real* advice those articles provide. Some go into replication factor and number of acknowledgments and sacrificing durability for performance.
+`queue.buffering.max.ms` is the same `linger.ms` mentioned by other sources according to [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md). But that's about the only *real* advice those articles provide. Some go into replication factor and number of acknowledgments and sacrificing durability for performance.
 
 I wrote short python code that produces messages sequentally in a loop and calculates the time it takes:
 ```python
@@ -56,7 +56,7 @@ The network latency was not to blame, it was around 1ms. For a short time I want
 
 Turns out the library is really waiting more than 40ms for a response from the broker using the `poll` system call.
 
-Hopelessly going through (librdkafka documentation)[https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md], I found a parameter named `socket.nagle.disable` with the default value of `False`. This setting keeps (Nagle's algorithm)[https://en.wikipedia.org/wiki/Nagle%27s_algorithm] enabled to trade latency for throughput at the kernel level. I grepped through the source code and saw that `socket.nagle.disable` sets  `TCP_NODELAY` parameter on the socket which is something I do when writing C code.
+Hopelessly going through [librdkafka documentation](https://raw.githubusercontent.com/edenhill/librdkafka/master/CONFIGURATION.md), I found a parameter named `socket.nagle.disable` with the default value of `False`. This setting keeps [Nagle's algorithm](https://en.wikipedia.org/wiki/Nagle%27s_algorithm) enabled to trade latency for throughput at the kernel level. I grepped through the source code and saw that `socket.nagle.disable` sets  `TCP_NODELAY` parameter on the socket which is something I do when writing C code.
 
 So the mystery was solved. I set the `socket.nagle.disable` to `True` and my code finally started to perform by producing more than 250 messages per second:
 
