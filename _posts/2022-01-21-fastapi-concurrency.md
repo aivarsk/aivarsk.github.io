@@ -114,20 +114,20 @@ Once both scripts are running I see that the current setup can process 600 liven
 
 ```
 1642154590 673
-1642154591 649                                                                                                                       
-1642154592 384                                                                                                                       
-1642154593 0                                                                                                                         
-1642154594 0                                                                                                                         
-1642154595 0                                                                                                                         
-1642154596 0                                                                                                                         
-1642154597 0                                                                                                                         
-1642154598 0                                                      
-1642154599 0                                                                                                                         
-1642154600 0                                                      
-1642154601 0                                                                                                                         
-1642154602 1                                                      
-1642154603 608                                                                                                                       
-1642154604 664                         
+1642154591 649
+1642154592 384
+1642154593 0
+1642154594 0
+1642154595 0
+1642154596 0
+1642154597 0
+1642154598 0
+1642154599 0
+1642154600 0
+1642154601 0
+1642154602 1
+1642154603 608
+1642154604 664
 ```
 
 What is happening? FastAPI is an asynchronous framework.
@@ -135,8 +135,8 @@ Unlike traditional multi-threading where the kernel tries to enforce fairness by
 
 Despite doing their best to run concurrently, FastAPI still has synchronous code that is executed from the main thread. Some of those functions do a lot of work and may clog the main thread when processing many large response objects. These functions are:
 
-[`_prepare_response_content`](https://github.com/tiangolo/fastapi/blob/master/fastapi/routing.py#L120) converts Pydantic models to Python dictionaries.
-[`jsonable_encoder`](https://github.com/tiangolo/fastapi/blob/master/fastapi/encoders.py#L29) ensures that the whole object tree can be converted to JSON. It does the most work for our test case.
+- [`_prepare_response_content`](https://github.com/tiangolo/fastapi/blob/master/fastapi/routing.py#L120) converts Pydantic models to Python dictionaries.
+- [`jsonable_encoder`](https://github.com/tiangolo/fastapi/blob/master/fastapi/encoders.py#L29) ensures that the whole object tree can be converted to JSON. It does the most work for our test case.
 
 So what is the solution to improve the concurrency of FastAPI services? One of the solutions is to run several Uvicorn workers and hope that all of them are not clogged at the same time.
 
@@ -158,16 +158,16 @@ The other solution is to off-load the encoding of the response to another thread
 With those changes applied, the FastAPI service behaves much better:
 
 ```
-1642158924 551                                                                                                                       
-1642158925 666                                                    
-1642158926 578                                                                                                                       
-1642158927 13                                                     
-1642158928 9                                                                                                                         
-1642158929 2                                                                                                                         
-1642158930 423                                                                                                                       
-1642158931 690                                                                                                                       
-1642158932 661                                                    
-1642158933 692      
+1642158924 551
+1642158925 666
+1642158926 578
+1642158927 13
+1642158928 9
+1642158929 2
+1642158930 423
+1642158931 690
+1642158932 661
+1642158933 692
 ```
 
 There still is a drop in the number of concurrent requests but the service experiences wobbliness for a shorter period and can respond to liveness probes.
