@@ -138,7 +138,7 @@ Despite doing their best to run concurrently, FastAPI still has synchronous code
 - [`_prepare_response_content`](https://github.com/tiangolo/fastapi/blob/master/fastapi/routing.py#L120) converts Pydantic models to Python dictionaries.
 - [`jsonable_encoder`](https://github.com/tiangolo/fastapi/blob/master/fastapi/encoders.py#L29) ensures that the whole object tree can be converted to JSON. It does the most work for our test case.
 
-So what is the solution to improve the concurrency of FastAPI services? One of the solutions is to run several Uvicorn workers and hope that all of them are not clogged at the same time.
+So what is the solution to improve the concurrency of FastAPI services? One of the solutions is to run several Uvicorn workers and hope that all of them are not clogged at the same time. That introduces some new challenges with monitoring (Prometheus multiprocess mode) and even functionality but is doable.
 
 The other solution is to off-load the encoding of the response to another thread and unblock the main thread. FastAPI even has a special response type `Response` that skips the `_prepare_resonse_content` and `jsonable_encoder` functions and returns response data as-is. Since our service function is already executed through a thread pool, we can convert the response to JSON there. And it requires minimal changes to the code:
 
