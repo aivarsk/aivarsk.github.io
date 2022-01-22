@@ -11,7 +11,7 @@ Both the HTTP client (Scala) and HTTP server (Python) are running in Kubernetes.
 Everything works for short requests of a couple of minutes. Once a request takes 5-6 or more minutes, strange things start to happen:
 
 - The server returns a response after 6 minutes
-- The client does not receive it and keeps waiting until read timeout occurs even when it is 15 minutes, 60 minutes, or 180 minutes.
+- The client does not receive it and keeps waiting until read timeout occurs even when it is 15 minutes, 30 minutes, or 60 minutes.
 
 So it looks like a timeout issue but where? And why the client does not detect the broken connection? Let's investigate:
 
