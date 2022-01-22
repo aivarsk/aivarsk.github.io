@@ -21,7 +21,7 @@ So it looks like a timeout issue but where? And why the client does not detect t
 
 Running `curl` using my old friend `strace` reveals some socket configuration `curl` does:
 
-```C
+```c
 socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = 3
 setsockopt(3, SOL_TCP, TCP_NODELAY, [1], 4) = 0
 setsockopt(3, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
