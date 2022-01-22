@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Idle HTTP connections in Scala on Kubernetes
-tags: kubernetes, k8, java, scala, keep-alive
+tags: kubernetes, k8, java, scala, tcp, http, keep-alive
 ---
 
 ![Kubernetes]({{ site.url }}/public/simplyk8.png)
