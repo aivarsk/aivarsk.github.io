@@ -29,7 +29,7 @@ For that `json.dumps` accepts an optional parameter named `default` which is use
 
 What then happens is that Python is jumping back and forth between the `json` module C extension and the Pydantic encoder written in Python. And while Python instructions are executed, a threshold is reached for switching to a different Python thread running concurrent requests. And this is where I got stuck.
 
-A) I could convert all Pydantic models to dictionaries so the C code completes faster without jumping back and forth between C extension and Python code. But that means no other code will be executed concurrently and I will be back where I started.
+A) I could convert all Pydantic models to dictionaries so the C code completes faster without jumping back and forth between C extension and Python code. But that means no other code will be executed concurrently and I will be back to where I started.
 
 B) I could use a pure Python implementation of `json.dumps` for better multithreading. But that will be slower and it puts more pressure on the memory because it collects all parts of the JSON string in a list and [builds a single string](https://github.com/python/cpython/blob/0fc3517cf46ec79b4681c31916d4081055a7ed09/Lib/json/encoder.py#L202) from that even when generators are used.
 
