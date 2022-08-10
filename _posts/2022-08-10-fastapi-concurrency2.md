@@ -27,7 +27,7 @@ But if JSON is encoded by the C extension, why did I still observe some concurre
 
 For unrecognized types `json.dumps` uses the optional parameter named `default`. [See the documentation for more details about it.](https://docs.python.org/3/library/json.html#json.dumps) The Pydantic library provides an implementation for this function that [converts the current model to a dictionary](https://github.com/samuelcolvin/pydantic/blob/36c53ceaa3e72876d4b438e124fc90a2cbc4ecef/pydantic/json.py#L72). `json.dumps` then encodes the resulting dictionary and may call `pydantic_encoder` again for Pydantic models it finds.
 
-What happens is that Python is jumping back and forth between the `json` module C extension and the Pydantic encoder written in Python. And while Python instructions are executed, a threshold is reached for switching to a different Python thread running concurrent requests. And this is where I got stuck thinking of a way how to improve the concurrency.
+So Python is jumping back and forth between the `json` module C extension and the Pydantic encoder written in Python. And while Python instructions are executed, a threshold is reached for switching to a different Python thread running concurrent requests. And this is where I got stuck thinking of a way how to improve the concurrency.
 
 A) I could convert all Pydantic models to dictionaries ahead of time so the C code completes faster without jumping back and forth between C extension and Python code. But that means no other code will be executed concurrently and I will be back to where I started.
 
