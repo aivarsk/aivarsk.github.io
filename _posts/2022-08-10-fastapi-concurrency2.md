@@ -15,7 +15,7 @@ After finding a good enough solution for [FastAPI and cooperative multi-threadin
 1643620393 322
 ```
 
-The numbers above were obtained by running the whole process under `strace` which made it slower but also revealed that threads were waiting on a mutex (`futex(...)` functions) and even timing out while trying to acquire it. The other frequent activity was memory allocation. So I started to follow the JSON encoder of the response model as that was taking the most time.
+It's not this bad in practice or for any realistic response size. The numbers above were obtained by running the whole process under `strace` which made it slower but also revealed that threads were waiting on a mutex (`futex(...)` functions) and even timing out while trying to acquire it. The other frequent activity was memory allocation. So I started to follow the JSON encoder of the response model as that was taking the most time.
 
 It starts by encoding the root Pydantic model as a dictionary and then calling the [`json.dumps` function](https://github.com/samuelcolvin/pydantic/blob/36c53ceaa3e72876d4b438e124fc90a2cbc4ecef/pydantic/main.py#L490) and receiving resulting JSON string. The `json` library has a mixed Python and C implementation. If possible, it will try to use [the C implementation for the speed](https://github.com/python/cpython/blob/0fc3517cf46ec79b4681c31916d4081055a7ed09/Lib/json/encoder.py#L14) unless you request a nice indented output.
 
