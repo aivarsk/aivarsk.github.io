@@ -21,7 +21,7 @@ It starts by encoding the root Pydantic model as a dictionary and then calling t
 
 So the entire JSON is encoded with a single C function call. Having written several Python modules in C, I know that the C code is called with the notorious Global Interpreter Lock held and no Python code can execute in the meanwhile. It is the responsibility of the C extension to release that lock if possible. And we are back to the topic of cooperative multi-threading but this time it's not coroutines and threads but Python threads and native threads.
 
-In CPython, only a single thread of Python code is executed at once. The interpreter switches between Python threads once a thread has executed a certain amount of instructions. But the interpreter is helpless if Python code calls into C extension. C extension has to either finish or explicitly release the GIL around long-running system calls.
+In CPython, only a single thread of Python code is executed at once. The interpreter switches between Python threads once a thread has executed a certain amount of instructions. But the interpreter is helpless if Python code calls into C extension. C extension has to either finish or explicitly release the GIL around long-running system calls. All other threads will starve until that happens.
 
 But if JSON is encoded by the C extension, why did I still observe some concurrent requests instead of zero? After going through the code I realized that the `json` library knows how to encode only built-in Python types. But the response I am trying to serialize is a tree of Pydantic models. How does this not fail with "Foo is not JSON serializable" error?
 
