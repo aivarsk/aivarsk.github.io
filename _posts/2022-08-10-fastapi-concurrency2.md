@@ -33,6 +33,6 @@ A) I could convert all Pydantic models to dictionaries so the C code completes f
 
 B) I could use a pure Python implementation of `json.dumps` for better multithreading. But that will be slower and it puts more pressure on the memory because it collects all parts of the JSON string in a list and [builds a single string](https://github.com/python/cpython/blob/0fc3517cf46ec79b4681c31916d4081055a7ed09/Lib/json/encoder.py#L202) from that even when generators are used.
 
-I do not like any of those choices because they have too many cons so I did a couple of patches to CPython and improved the performance of `json.dumps`. I could not improve concurrency but at least there is a positive outcome from this investigation.
+I did not like any of those choices because they had too many downsides so I did a couple of patches to CPython and improved the performance of `json.dumps`. I could not improve concurrency but at least there is a positive outcome from this investigation.
 
 ![json.dumps]({{ site.url }}/public/jsondumps.png)
