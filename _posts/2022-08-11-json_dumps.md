@@ -55,7 +55,7 @@ for key, value in items:
     ...
 ```
 
-If you keep in mind that `sort_keys` is `False` by default and look at the code carefully you will notice the creation of a list of tuples containing key and value pairs seems wasteful when sorting is not performed. So I added a separate code path to iterate over dictionary items directly without creating copies. Which was easy and the main challenge was to reuse the body of the loop between both code paths.
+If you keep in mind that `sort_keys` is `False` by default and look at the code carefully you will notice the creation of a list of tuples containing key and value pairs. That seems wasteful when sorting is not performed. So I added a separate code path to iterate over dictionary items directly without creating copies. Which was easy and the main challenge was to reuse the body of the loop between both code paths.
 
 ```python
 if sort_keys:
