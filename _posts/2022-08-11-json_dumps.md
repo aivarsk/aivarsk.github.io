@@ -4,6 +4,8 @@ title: How I made `json.dumps` ~20% faster
 tags: python cpython json
 ---
 
+My journey to understand the performance and concurrency of FastAPI services lead me to the Python `json.dumps` function producing JSON string out of object tree. And I ended up making it a bit faster:
+
 ![json.dumps]({{ site.url }}/public/jsondumps.png)
 
 ## `_PyAccu` vs `_PyUnicodeWriter`
