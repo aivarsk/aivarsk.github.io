@@ -8,7 +8,7 @@ tags: python cpython json
 
 ## `_PyAccu` vs `_PyUnicodeWriter`
 
-How do you create the JSON string out of all objects in the tree? `json.dumps` C implementation used [`_PyAccu` for that](https://github.com/python/cpython/blob/3.11/Objects/accu.c).
+How do you create the JSON string out of string representation of all objects in the tree? `json.dumps` C implementation used [`_PyAccu` for that](https://github.com/python/cpython/blob/3.11/Objects/accu.c).
 
 `_PyAccu` maintains two lists of strings: `small` and `large`. All strings are added to the `small` list first. Once it contains 100,000 (!!!) elements, all of them are joined together and the result is added to the `large` list. Python pseudo-code for that would be like this:
 
