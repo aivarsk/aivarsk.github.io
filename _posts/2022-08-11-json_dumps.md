@@ -25,7 +25,7 @@ return large
 
 My initial reaction to this algorithm was negative because it accumulates a lot of small objects only to discard them all at once later.
 
-The way memory allocation works in most software memory usage goes up easily but never goes down. Even when memory is released it's still reserved for the process. There are some conditions and some allocators that can release memory back to the operating system if the "tail" of memory is no longer needed. But those are exceptions and not the norm. Also when many small objects are released some allocators try to join the freed space into a larger area and that takes time.
+The way memory allocation works in most software makes memory usage go up easily but never go down. Even when memory is released it's still reserved for the process. There are some conditions and some allocators that can release memory back to the operating system if the "tail" of memory is no longer needed. But those are exceptions and not the norm. Also when many small objects are released some allocators try to join the freed space into a larger area and that takes time.
 
 From the algorithmic point of view once we have to join all 100,000 strings the code goes through it twice: once to calculate the total size and second time to copy the content to the resulting string. This will trash the CPU cache going after each object but that might not be a significant hit for interpreted Python code.
 
