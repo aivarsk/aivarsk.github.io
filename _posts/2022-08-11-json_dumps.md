@@ -45,7 +45,7 @@ I made a change to replace `_PyAccu` with `_PyUnicodeWriter` and it resulted in 
 
 ## Fast-path for the default case
 
-The C implementation of `json.dumps` takes a couple of parameters that affect the output. One of those is `sort_keys=False` to request [sorting of dictionary keys](https://docs.python.org/3.12/library/json.html#json.dumps). How it is implemented would be something like this in Python pseudo-code: 
+The C implementation of `json.dumps` takes a couple of parameters that affect the output. One of those is `sort_keys=False` to request [sorting of dictionary keys](https://docs.python.org/3.12/library/json.html#json.dumps). The implementation of the feature would be something like this in Python pseudo-code: 
 
 ```python
 items = list(pydict.items())
