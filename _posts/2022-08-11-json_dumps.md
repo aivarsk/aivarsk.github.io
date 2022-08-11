@@ -20,6 +20,7 @@ while True:
     if len(small) == 100000:
         large.append(''.join(small))
         del small[:]
+large.append(''.join(small))
 return large
 ```
 
@@ -38,7 +39,7 @@ while True:
 return result
 ```
 
-The main trick here is to over-allocate the memory needed for the resulting string. Without that, a new `result` string would be created each time and the content of the old `result` and `some_string` would be copied over it. With over-allocation, there is some extra space in the `result` string and reallocation and copying of content do not happen every time. I would simply double the size every time but CPython increases that by 25% on Linux and 50% on Windows.
+The main trick here is to over-allocate the memory needed for the resulting string. Without that, a new `result` string would be created each time and the content of the old `result` and `some_string` would be copied over. With over-allocation, there is some extra space in the `result` string and reallocation and copying of content do not happen every time. I would simply double the size every time but CPython increases that by 25% on Linux and 50% on Windows.
 
 I made a change to replace `_PyAccu` with `_PyUnicodeWriter` and it resulted in a small performance boost in pyperformance benchmark as well. Turned out that `_PyAccu` was used only in two places so I replaces `_PyAccu` everywhere and deleted it completely.
 
