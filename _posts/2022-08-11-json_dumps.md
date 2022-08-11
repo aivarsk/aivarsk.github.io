@@ -70,6 +70,6 @@ else:
 
 This change resulted in a more than 10% boost in pyperformance benchmark.
 
-Everything did not go so smoothly: I had a couple of ideas that were not worth the slightly more complex code. Compared to the execution time of Python code the improvement was negligible.
+These were the two good changes. I had a couple of ideas that turned out not worth the slightly more complex code. Compared to the execution time of Python code the improvement was negligible and hard to tell apart from the noise.
 
 What's left now is to wait for 2023-10-02 when Python 3.12.0 will be released with these changes.
