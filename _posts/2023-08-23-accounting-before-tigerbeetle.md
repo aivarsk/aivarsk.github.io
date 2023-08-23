@@ -34,9 +34,9 @@ I think the lower bound is 2 queries: one for the select or update of the accoun
 
 ## Stored procedures
 
-Every time we execute a query, we pay with network roundtrip. A common wisdom years ago was to implement everything as stored procedures executing inside the database. It's still something to consider in extreme cases because the developer experience for stored procedures is far from modern IDE-based development.
+Every time we execute a query, we pay with network roundtrip. A common wisdom years ago was to implement everything as stored procedures executing inside the database. It's still something to consider in extreme cases. I would not do it by default because the developer experience for stored procedures is far from modern IDE-based development.
 
-In most cases not using stored procedures is fine as long as we keep the number of queries low and network fast. When network roundtrips are an issue, we can try to run the service on the database server itself. 
+In most cases, we can get away without using stored procedures as long as we keep the number of queries low and network fast. When network roundtrips are an issue, we can try to run the service on the database server itself. 
 
 ## Scaling vertically
 
