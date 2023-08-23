@@ -42,7 +42,7 @@ In most cases, we can get away without using stored procedures as long as we kee
 
 In order to scale horizontally we must have a problem domain that can be partitioned well.
 
-In double-entry accounting, many transactions will keep updating the same bank accounts and there is a certain number of times we can do it per second. To exceed that number we have to either tune/optimize the code or scale vertically to run the code faster by using SSDs, faster CPUs, and network.
+In double-entry accounting, many transactions will keep updating the same bank accounts and there is a certain number of times we can do it per second. To exceed that number we have to either tune the database, optimize the code, or scale vertically to run the code faster by using SSDs, faster CPUs, and network.
 
 ## Keeping account balance and contention
 
