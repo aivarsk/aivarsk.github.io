@@ -8,7 +8,7 @@ TigerBeetle is an interesting project to follow.  It links to interesting papers
 
 In [one of the presentations](https://youtu.be/LHsjviZJ7PQ), it says "Accounting is the Language of Business" and "SQL is the Language of OLTP" so we get "OLTP Impedance Mismatch". As an example of impedance mismatch, one of the accounting systems had "1 Financial Transaction = 20 SQL Queries". Because double-entry bookkeeping has entries like "Debit Bank Account for $0.02, Credit Customer Account for $0.02" it leads to contention on the bank account which limits the accounting system to "76 Transactions per Second".
 
-But we had systems that handled more than 76 transactions per second on single/dual CPU servers with slow-spinning disks more than 20 years ago. I worked on some more than 10 years ago. How could they do it without relying on TigerBeatle?
+But we had systems that handled more than 76 transactions per second on single/dual CPU servers with slow-spinning disks more than 20 years ago. I worked on some more than 10 years ago. How could they do it without relying on TigerBeetle?
 
 ## Batch processing by default.
 
