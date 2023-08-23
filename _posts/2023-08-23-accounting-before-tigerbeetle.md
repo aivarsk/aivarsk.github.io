@@ -54,7 +54,7 @@ We can partition bank accounts using a hash of a client account or a random numb
 
 A more radical approach is to skip updating the balance and writing deltas to a new table or use the existing journal table. We might have a periodic task that sums all updates, applies to accounts, and marks deltas as processed. Or we can always do a query to calculate the balance of the bank account if it's needed only for reporting.
 
-After all, this is about double-entry bookkeeping where each entry is recorded in at least two accounts as credit and debit. As [Martin Fowler's accounting patterns](https://martinfowler.com/apsupp/accounting.pdf) describe, keeping an up-to-date balance is just an optimization. If it makes the system faster - great, if that limits concurrency - skip it.
+After all, this is about double-entry bookkeeping where each entry is recorded in at least two accounts as credit and debit. Keep the entries, lose the up-to-date balance. As [Martin Fowler's accounting patterns](https://martinfowler.com/apsupp/accounting.pdf) describe, keeping an up-to-date balance is just an optimization. If it makes the system faster - great, if that limits concurrency - skip it.
 
 ## TL;DR
 
