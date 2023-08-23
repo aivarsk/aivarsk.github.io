@@ -46,7 +46,7 @@ In double-entry accounting, many transactions will keep updating the same bank a
 
 ## Keeping account balance and contention
 
-The main reason for an up-to-date balance is to ensure account balance does not become negative. Or "credits do not exceed debits", "debits do not exceed credits" in TigerBeetle terms. But do we care if the bank account has sufficient balance for the debit entry? Most of the time we care only about the direct actions of the client when he pays for something. When a bank wants to collect mortgage payments, it will happily run our accounts into a negative balance.
+The main reason for storing an up-to-date balance is to ensure account balance does not become negative. Or "credits do not exceed debits", "debits do not exceed credits" in TigerBeetle terms. But do we care if the bank account has sufficient balance for the debit entry? Most of the time we care only about the direct actions of the client when he pays for something. When a bank wants to collect mortgage payments, it will happily run our accounts into a negative balance.
 
 Since bank accounts lead to contention, we can handle them differently.
 
