@@ -18,6 +18,12 @@ Some other code I have written both bad and "good enough":
 - ... and other Open Source on [github.com/aivarsk](https://github.com/aivarsk)
 - ... and info about Closed Source on [stackoverflow.com/story/aivarsk](https://stackoverflow.com/cv/aivarsk)
 
+Some contributions to OSS:
+
+- Python 3.12
+  - [Replace PyAccu with PyUnicodeWriter](https://github.com/python/cpython/issues/95005) to speed up `json.dumps` and to remove some C code
+  - [Fastpath for encoding unsorted dict to JSON](https://github.com/python/cpython/issues/95385) to speed up `json.dumps`
+
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
 <small>
