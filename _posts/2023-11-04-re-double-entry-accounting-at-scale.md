@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Re: Double-entry accounting at scale
+title: Re&colon; Double-entry accounting at scale
 tags: PostgreSQL, ledger, Django
 ---
 
