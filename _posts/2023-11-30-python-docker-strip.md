@@ -12,4 +12,4 @@ So now I added striping of libraries right after the `pip install` command in `D
 find /usr/local/lib/python3.10/dist-packages/ -name "*.so" | xargs strip
 ```
 
-Even for simple projects with SQLAchemy, it reduces shared library size from 4.9M to 980K. 
+Even for simple projects with SQLAchemy, it reduces shared library size from 4.9M to 980K. I think it's worth keeping this trick in my toolbelt.
