@@ -23,6 +23,8 @@ Some contributions to OSS:
 - Python 3.12
   - [Replace PyAccu with PyUnicodeWriter](https://github.com/python/cpython/issues/95005) to speed up `json.dumps` and to remove some C code
   - [Fastpath for encoding unsorted dict to JSON](https://github.com/python/cpython/issues/95385) to speed up `json.dumps`
+- Django 5.1
+  - [Allow customizing queryset in Model.refresh_from_db](https://github.com/django/django/commit/f92641a636a8cb75fc9851396cef4345510a4b52) for locking rows and fetching related models
 
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
