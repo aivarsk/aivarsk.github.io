@@ -10,4 +10,4 @@ Over the last weeks, I was strongly incentivized to dive into Linux enhanced Ber
 
 There are 2 probes for copying IPC messages from the user space to the kernel space and back. I can store all information needed in `bpftrace` maps (associative arrays) by using the message address in kernel space as the key. The rest was just extra hops to make it all work: not all probes receive the pointer to the message so the information has to be passed through another map indexed by the thread id. Which is a standard practice for making parameters available in the return probes.
 
-So here is a proof of concept that works [msg_latency.bt](https://github.com/fuxedo/tuxtrace/blob/master/msg_latency.bt) and I can work on making it smarter to recognize the service names and service requests and respones.
+So here is a proof of concept that works [msg_latency.bt](https://github.com/fuxedo/tuxtrace/blob/master/msg_latency.bt) and I can work on making it smarter to recognize the service names and service requests and responses.
