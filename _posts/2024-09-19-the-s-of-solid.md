@@ -38,7 +38,7 @@ So it's a collection of closely related things. Splitting them further into even
 
 Once again, you can read it yourself online for free: [The Practical Guide to Structured Systems Design, 2d. ed., Meilir PageJones, Yourdon Press Computing Series, 1988](https://archive.org/details/practicalguideto02edpage)
 
-This book had a lot to say about cohesion, these are my favourite bits:
+This book had a lot to say about cohesion, these are my favorite bits:
 
 | Designers should create strong, highly cohesive modules, modules whose  elements are strongly and genuinely related to one another. *On the other hand, the elements of one module should not be strongly related to the elements of another module, because that would lead to tight coupling between the modules.*
 
@@ -59,7 +59,7 @@ Why do we have to redefine something at all? Why not call this the Single Reason
 
 ## SRP is ISP sometimes
 
-Then there is a part where Single-responsibility principle (SRP) is applied to the interfaces a class implements not the implementation itself. So it looks like the interface segregation principle (ISP) to me:
+Then there is a part where the Single-responsibility principle (SRP) is applied to the interfaces a class implements not the implementation itself. So it looks like the interface segregation principle (ISP) to me:
 
 | It separates the two responsibilities into two separate interfaces. This, at least, keeps the client applications from coupling the two responsibilities. However, notice that I have recoupled the two responsibilities into a single `ModemImplementation` class. This is not desirable, but it may be necessary.
 
@@ -67,4 +67,4 @@ This is not a bad thing and a nice tool to have, I just wish more SOLID advocate
 
 ## Final thoughts
 
-It will not surprise you to say I prefer the original "cohesion" and the [low coupling, high cohesion](https://wiki.c2.com/?CouplingAndCohesion) principle for finding the right balance between both. I think the Single-responsibility principle is just a redefinition of redefinition (another name for cohesion and "responsibility" is another name for "a reason for change"). I can see how "a single reason for change" supports putting related together and not splitting that further, but that is just one of the possible interpretations. Even [Locality of Behavior](https://htmx.org/essays/locality-of-behaviour/) is closer to the spirit of coupling than the SRP is. We would do better with the original cohesion and avoid misinterpretations and would keep the coupling close to it. I know some people say that D of SOLID speaks about the coupling aspect but (spoiler alert!) I suspect D is to "coupling" what S is to "cohesion": lost in translation.
+It will not surprise you to say I prefer the original "cohesion" and the [low coupling, high cohesion](https://wiki.c2.com/?CouplingAndCohesion) principle for finding the right balance between both. I think the Single-responsibility principle is just a redefinition of redefinition (another name for cohesion and "responsibility" is another name for "a reason for change"). I can see how "a single reason for change" supports putting related things together and not splitting that further, but that is just one of the possible interpretations. Even [Locality of Behavior](https://htmx.org/essays/locality-of-behaviour/) is closer to the spirit of coupling than the SRP is. We would do better with the original cohesion and avoid misinterpretations. And... And it would keep the coupling close to it! I know some people say that D of SOLID speaks about the coupling aspect but (spoiler alert!) I suspect D is to "coupling" what S is to "cohesion": lost in translation.
