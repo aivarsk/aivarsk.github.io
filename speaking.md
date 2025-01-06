@@ -1,13 +1,14 @@
+## Upcoming
 
 Raw-dogging the Linux proc filesystem
 
-- 2025 SREDay London @ London, UK 
+- 2025 SRE Day London @ London, UK 
 
-====
+## Past
 
 The good, the bad, and Kafka
 
-- 2024 DevClub.lv @ Riga, Latvia
+- 2024 133rd DevClub.lv @ Riga, Latvia
 
 Pessimism, optimism, realism and Django database concurrency
 
