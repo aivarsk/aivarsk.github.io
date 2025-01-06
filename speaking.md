@@ -39,7 +39,7 @@ How a 300€ mobile phone can do what a 0.3€ payment card does
 
 - 2017 TopConf Tallinn @ Tallinn, Estonia
 - 2018 JAX Finance @ London, UK
-- 2018 JAX, Mainz @ Germany
+- 2018 JAX @ Mainz, Germany
 - 2019 81st DevClub.lv @ Riga, Latvia
 
 A NoSQL journey in Oracle SQL world – conference talk
