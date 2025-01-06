@@ -26,6 +26,8 @@ Some contributions to OSS:
 - Django 5.1
   - [Allow customizing queryset in Model.refresh_from_db](https://github.com/django/django/commit/f92641a636a8cb75fc9851396cef4345510a4b52) for locking rows and fetching related models
 
+I have given public talks on databases, payments and payment cards, Python, Django, Kafka and other topics. [I keep a list here.](/speaking)
+
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
 <small>
