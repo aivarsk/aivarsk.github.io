@@ -1,3 +1,8 @@
+---
+layout: page
+title: Public speaking
+---
+
 ## Upcoming
 
 Raw-dogging the Linux proc filesystem
