@@ -16,7 +16,7 @@ And then VISA and MasterCard and other card organizations provide a list of rang
 
 So how do you check to which card range the given PAN belongs? The best way is to keep it in memory and have 2 sets of data: the active one and the one for loading a new data set. Once it's loaded, you just switch a flag/pointer to indicate which is the active one. Exactly like the "finding a PAN in a haystack" talk described.
 
-But you can also do the same with the database and it's not that slow when done correctly. It was working well enough on spinning disks and it gets only better with SDDs. There are better solutions for modern databases, but let's stick with this one that worked in the early 2000s.
+But you can also do the same with the database and it's not that slow when done correctly. It was working well enough on spinning disks and it gets only better with SSDs. There are better solutions for modern databases, but let's stick with this one that worked in the early 2000s.
 
 First, I will store the range as strings or `varchar` in the database language. You can do numbers, but when I first worked on this problem 64 bits were not supported in some parts of the system.
 
