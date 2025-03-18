@@ -4,7 +4,7 @@ title: Making sense of card range query EXPLAIN plans
 tags: PostgreSQL, Django, PAN, card range, fintech
 ---
 
-I was listening to [a talk about finding a PAN in a haystack]((https://www.youtube.com/watch?v=eTueJyRw7qQ) and this slide came up with performance numbers in seconds:
+I was listening to [a talk about finding a PAN in a haystack](https://www.youtube.com/watch?v=eTueJyRw7qQ) and this slide came up with performance numbers in seconds:
 
 ![slow card range query]({{ site.url }}/public//cardrange.png)
 
@@ -245,5 +245,4 @@ check ('200', '209')
 check ('100', '109')
 ```
 
-
-Come and see me at [PyCon Austria](https://pycon.pyug.at/en/speakers/) and [PyCon Italy](https://2025.pycon.it/en/event/querysetexplain-make-it-make-sense) with more database query shenanigans.
+As a backup, here is [a repository of this exercise](https://github.com/aivarsk/django-cardrange). Come and see me at [PyCon Austria](https://pycon.pyug.at/en/speakers/) and [PyCon Italy](https://2025.pycon.it/en/event/querysetexplain-make-it-make-sense) with more database query shenanigans.
