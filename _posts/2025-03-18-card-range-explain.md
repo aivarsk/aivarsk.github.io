@@ -164,9 +164,11 @@ postgres=# /*+ IndexScan(cardrange_cardrange) */ EXPLAIN ANALYZE SELECT info FRO
  Planning Time: 1.050 ms
  Execution Time: 58.715 ms
 (4 rows)
+```
 
 We still get the same result as for the previous index. But let's add the `LIMIT 1` condition back to the query:
 
+```sql
 postgres=# /*+ IndexScan(cardrange_cardrange) */ EXPLAIN ANALYZE SELECT info FROM cardrange_cardrange WHERE start_range <= '4567891234567890000' AND end_range >= '4567891234567890000' LIMIT 1;
                                                                          QUERY PLAN
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
