@@ -12,7 +12,7 @@ This topic is close to my heart because it involves FinTech, databases, and perf
 
 A card number or PAN or Primary Account Number is a series of 12 to 19 digits. Most popular VISA and MasterCard cards use 16 digits but card systems must handle the variable length for PANs.
 
-And then VISA and MasterCard and other card organizations provide a list of ranges: start value, end value, or sometimes just 6 to 9 first digits. For each range there are different properties and rules for transactions allowed, etc. The data provided by organizations overlap and there are strategies to fix that. And there are 100s of thousands of ranges.
+And then VISA and MasterCard and other card organizations provide a list of ranges: start value, end value, or sometimes just 6 to 9 first digits. For each range there are different properties and rules for transactions allowed, regions supported, etc. Ranges provided by organizations overlap and have contradicting rules but I will leave this out. And there are 100s of thousands of ranges.
 
 So how do you check to which card range the given PAN belongs? The best way is to keep it in memory and have 2 sets of data: the active one and the one for loading a new data set. Once it's loaded, you just switch a flag/pointer to indicate which is the active one. 
 
