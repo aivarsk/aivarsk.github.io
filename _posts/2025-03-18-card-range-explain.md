@@ -206,7 +206,8 @@ for low, high in card_ranges():
         print("skip ", (low, high))
 ```
 
-For our dataset, half of the rows will have a start value less than the value we look for, and half of the rows will have an end value larger than the value we look for. During execution, the index range scan will start with the first entry in the index and will continue to compare half of the rows. The last row with the start value less than what we are looking for will be our match.
+I picked a number that is in the middle of the dataset to better illustrate the idea. Half of the rows will have a *start* value less than the value we look for. Half of the rows will have an *end* value larger than the value we look for.
+
 
 ```python
 check ('100', '109')
@@ -221,7 +222,8 @@ skip  ('800', '809')
 skip  ('900', '909')
 ```
 
-Now let's do the same but for the index sorted in descending order: 
+During execution, the index range scan had to compare against half of the rows until it found the match. Rows marked as "skip" would be skipped, they are here to illustrate the idea. Now let's do the same but for the index sorted in descending order:
+
 
 ```python
 for low, high in reversed(card_ranges()):
@@ -233,7 +235,7 @@ for low, high in reversed(card_ranges()):
         print("skip ", (low, high))
 ```
 
-Here the scan starts by skipping the index entries. The tree structure will help to jump over those quickly. And then the first entry in the index we check will also be our match. Unfortunately, the index scan will continue to search for any other ranges that satisfy the conditions. This is the reason just changing the index was not enough, I had to force it to return after a single row is found with `LIMIT 1`.
+Here the scan starts by skipping the index entries. The tree structure of the index will help to jump over those quickly. And then *the first entry* in the index we check will also be our match. Unfortunately, the index scan will continue to search for any other ranges that satisfy the conditions. This is the reason just changing the index was not enough, I had to force it to return after a single row is found with `LIMIT 1`.
 
 ```python
 skip  ('900', '909')
@@ -248,4 +250,6 @@ check ('200', '209')
 check ('100', '109')
 ```
 
-As a backup, here is [a repository of this exercise](https://github.com/aivarsk/django-cardrange). Come and see me at [PyCon Austria](https://pycon.pyug.at/en/speakers/) and [PyCon Italy](https://2025.pycon.it/en/event/querysetexplain-make-it-make-sense) with more database query shenanigans.
+As a backup, here is [a repository of this exercise](https://github.com/aivarsk/django-cardrange).
+
+Come and see me at [PyCon Austria](https://pycon.pyug.at/en/speakers/) and [PyCon Italy](https://2025.pycon.it/en/event/querysetexplain-make-it-make-sense) with more database query shenanigans.
