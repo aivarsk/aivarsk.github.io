@@ -186,7 +186,7 @@ Multicolumn indexes are similar to single field indexes - the multiple values ar
 
 For index range scans database will do a sequential scan of the index and the tree structure helps to find the starting point for the scan (a high-level overview).
 
-First, let's produce an ordered list of start and end ranges as if those were stored in an index:
+I like to reproduce such behavior with small Python scripts. First, let's produce an ordered list of start and end ranges as if those were stored in an index:
 
 ```
 def card_ranges():
