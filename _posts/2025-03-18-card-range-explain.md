@@ -107,7 +107,7 @@ postgres=# load 'pg_hint_plan';
 LOAD
 ```
 
-Another option for lazy people is to enable table scans and force them to use indexes for all queries by executing the following command: `set enable_seqscan=false`.
+Another option for lazy people is to disable table scans and force the database to use indexes for all queries by executing the following command: `set enable_seqscan=false`.
 
 I have the extension and can pass a hint to the database about using the index:
 
