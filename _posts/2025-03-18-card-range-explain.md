@@ -14,7 +14,7 @@ A card number or PAN or Primary Account Number is a series of 12 to 19 digits. M
 
 And then VISA and MasterCard and other card organizations provide a list of ranges: start value, end value, or sometimes just 6 to 9 first digits. For each range there are different properties and rules for transactions allowed, regions supported, etc. Ranges provided by organizations overlap and have contradicting rules but I will leave this out. And there are 100s of thousands of ranges.
 
-So how do you check to which card range the given PAN belongs? The best way is to keep it in memory and have 2 sets of data: the active one and the one for loading a new data set. Once it's loaded, you just switch a flag/pointer to indicate which is the active one. 
+So how do you check to which card range the given PAN belongs? The best way is to keep it in memory and have 2 sets of data: the active one and the one for loading a new data set. Once it's loaded, you just switch a flag/pointer to indicate which is the active one. Exactly like the "finding a PAN in a haystack" talk described.
 
 But you can also do the same with the database and it's not that slow when done correctly. It was working well enough on spinning disks and it gets only better with SDDs. There are better solutions for modern databases, but let's stick with this one that worked in the early 2000s.
 
