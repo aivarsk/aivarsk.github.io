@@ -145,6 +145,7 @@ Now I will change the index slightly and recreate it. Can you spot the differenc
                 fields=["-start_range", "end_range"], name="card_range_start_end_idx"
             ),
         ]
+```
 
 The difference was the `-` sign in front of the `start_range` field and that causes the field to be indexed in descending order. The SQL will have `"card_range_start_end_idx" btree (start_range DESC, end_range)`. Let's apply the migration:
 
