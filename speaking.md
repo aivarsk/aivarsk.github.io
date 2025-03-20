@@ -5,6 +5,16 @@ title: Public speaking
 
 ## Upcoming
 
+How to solve a Python mystery
+
+- 2025 PyCon Austria @ Eisenstadt, Austria
+- 2025 DjangoCon Europe @ Dublin, Ireland
+
+QuerySet.explain(): make it make sense
+
+- 2025 PyCon Austria @ Eisenstadt, Austria
+- 2025 PyCon Italia @ Bologna, Italy
+
 Raw-dogging the Linux proc filesystem
 
 - 2025 SRE Day London @ London, UK 
@@ -21,7 +31,7 @@ Pessimism, optimism, realism and Django database concurrency
 - 2023 PyConPL @ Gliwice, Poland
 - 2023 PyCon Estonia @ Tallinn, Estonia
 - 2023 Django Day Copenhagen @ Copenhagen, Denmark
-- 2023 PyConb Ireland @ Dublin, Ireland
+- 2023 PyCon Ireland @ Dublin, Ireland
 
 Talking to payment cards over NFC
 
