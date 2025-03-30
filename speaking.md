@@ -15,11 +15,11 @@ QuerySet.explain(): make it make sense
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 PyCon Italia @ Bologna, Italy
 
+## Past
+
 Raw-dogging the Linux proc filesystem
 
 - 2025 SRE Day London @ London, UK 
-
-## Past
 
 The good, the bad, and Kafka
 
