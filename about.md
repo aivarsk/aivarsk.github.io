@@ -11,6 +11,7 @@ I have written a book about developing modern Oracle Tuxedo applications using P
 
 Some other code I have written both bad and "good enough":
 
+- [Django Task Queue](https://github.com/aivarsk/django-taskq) - asynchronous task queue with a Celery-compatible API using a database backend
 - [Scruffy UML](https://github.com/aivarsk/scruffy) - creates UML diagrams from textual description.
 - [libvmod-rewrite](https://github.com/aivarsk/libvmod-rewrite) - a plugin for Varnish (proxy server) that allows to modify cached pages.
 - [pattern-matcher](https://github.com/aivarsk/pattern-matcher) and [cloud-instances](https://github.com/aivarsk/cloud-instances) are winning entries of Latvia Java User Group programming contest. The first one was written while I was still drunk after a party.
