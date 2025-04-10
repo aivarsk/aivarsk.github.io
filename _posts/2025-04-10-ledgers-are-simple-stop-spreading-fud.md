@@ -14,7 +14,7 @@ A double-entry entry transaction can be done with 2 SQL statements in a single d
 
 3. You are done and all you have to do is to commit the successful transaction as soon as possible because locks on both accounts were taken on step #2 and you release them by doing a commit to enable as many concurrent updates as possible. Do not write log messages or PDF statements before committing the transaction, every milliseconds counts there. After the commit - pop a champagne and go crazy.
 
-All of that is a piece of cake with Django:
+All of that is a piece of cake with Django doing 200+ per second from a single thread:
 
 ```python
 def transfer(debit: Account, credit: Account, amount: int):
