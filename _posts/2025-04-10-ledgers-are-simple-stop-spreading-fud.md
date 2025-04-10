@@ -34,4 +34,4 @@ def transfer(debit: Account, credit: Account, amount: int):
 
 It does get a tiny bit more complicated if you want to track credits and debits separately and implement active/passive, assets/liabilities in different ways, [but it's doable and nothing to be scared about](https://github.com/aivarsk/django-modern-treasury-poc/blob/main/debitcredit/models.py#L38).
 
-Now, the really complicated part is the structure of ledger and deciding how many accounts to keep and through which accounts to move the money to satisfy local laws and your accountants. But that is a different story.
+Now, the really complicated part is the structure of the ledger and deciding how many accounts to keep and through which accounts to move the money to satisfy local laws and your accountants. But that is a different story.
