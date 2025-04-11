@@ -7,15 +7,21 @@ title: Public speaking
 
 How to solve a Python mystery
 
-- 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 DjangoCon Europe @ Dublin, Ireland
 
 QuerySet.explain(): make it make sense
 
-- 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 PyCon Italia @ Bologna, Italy
 
 ## Past
+
+How to solve a Python mystery
+
+- 2025 PyCon Austria @ Eisenstadt, Austria
+
+QuerySet.explain(): make it make sense
+
+- 2025 PyCon Austria @ Eisenstadt, Austria
 
 Raw-dogging the Linux proc filesystem
 
