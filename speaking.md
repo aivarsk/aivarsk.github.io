@@ -7,7 +7,7 @@ title: Public speaking
 
 How to solve a Python mystery
 
-- 2025 DjangoCon Europe @ Dublin, Ireland
+- 2025 PyGrunn @ Groningen, Netherlands
 
 QuerySet.explain(): make it make sense
 
@@ -18,6 +18,7 @@ QuerySet.explain(): make it make sense
 How to solve a Python mystery
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
+- 2025 DjangoCon Europe @ Dublin, Ireland
 
 QuerySet.explain(): make it make sense
 
