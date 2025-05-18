@@ -5,13 +5,10 @@ title: Public speaking
 
 ## Upcoming
 
-How to solve a Python mystery
-
-- 2025 PyGrunn @ Groningen, Netherlands
-
 QuerySet.explain(): make it make sense
 
 - 2025 PyCon Italia @ Bologna, Italy
+- 2025 PyCon Portugal @ Cascai, Portugal
 
 ## Past
 
@@ -19,10 +16,12 @@ How to solve a Python mystery
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 DjangoCon Europe @ Dublin, Ireland
+- 2025 PyGrunn @ Groningen, Netherlands
 
 QuerySet.explain(): make it make sense
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
+- 2025 PyGrunn @ Groningen, Netherlands (not planned, filled in for a missing speaker)
 
 Raw-dogging the Linux proc filesystem
 
