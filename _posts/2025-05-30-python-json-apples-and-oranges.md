@@ -21,10 +21,10 @@ Yes, it will fail with every encoder. But the one in Python does a ton of work j
 - [ultrajson](https://github.com/ultrajson/ultrajson) gives you `OverflowError: Maximum recursion level reached`
 - [orjson](https://github.com/ijl/orjson) gives you a `TypeError: Recursion limit reached`
 
-Is it worth it? You can make the Python JSON encoder around 15% faster by turning off the check for circular references like this:
+Is it worth it? I don't think so. Catching the `RecursionError` and raising a `ValueError` for backward compatibility would be much easier.  I will try to make a patch that improves the Python and also removes some code but [exception notes](https://docs.python.org/3/library/exceptions.html#BaseException.__notes__) and the Python JSON encoder tests around that do not make that easy.
+
+In the meanwhile, you can make the Python JSON encoder around 15% faster by turning off the check for circular references like this:
 
 ```python
 json.dumps(data, check_circular=False)
 ```
-
-I don't think so. Catching the `RecursionError` and raising a `ValueError` for backward compatibility would be much easier.  I will try to make a patch that improves the Python and also removes some code but [exception notes](https://docs.python.org/3/library/exceptions.html#BaseException.__notes__) and the Python JSON encoder tests around that do not make that easy.
