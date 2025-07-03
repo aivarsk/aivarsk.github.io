@@ -16,9 +16,9 @@ def something_happened(*, key: str, value: str):
     ...
 
 with transaction.atomic():
-	model1.save()
-	model2.save()
-	something_happened.delay(key=str(uuid.uud4()), value=payload.model_dump_json())
+    model1.save()
+    model2.save()
+    something_happened.delay(key=str(uuid.uud4()), value=payload.model_dump_json())
 ```
 
 Either all models will be updated and a new task scheduled or none of it will happen. And when the task runs, the model changes will be there in the database. I guess all of us have a Celery story about having a similar code and tasks executed before changes are committed and visible in the database. At which point everybody starts using `transaction.on_commit` that works most of the time while the broker keeps running, the network to broker is reliable and Redis or application is not being killed by OOM killer.
