@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Opinionated programming
+title: On programming
 ---
 
-**You should never take software design advice from anyone who hasn’t had to make a living selling software in a competitive arena.**
+The guiding principle:
+
+> You should never take software design advice from anyone who hasn’t had to make a living selling software in a competitive arena.
 
 ## Buzzwords
 
