@@ -7,11 +7,12 @@ title: Opinionated programming
 
 ## Buzzwords
 
+- [Complexity very, very bad](https://grugbrain.dev/)
 - [The Majestic Monolith](https://signalvnoise.com/svn3/the-majestic-monolith/)
 - [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/)
-- [Complexity very, very bad](https://grugbrain.dev/)
+- [High cohesion, low coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
 - [Deep classes, interfaces, modules over shallow ones](https://web.stanford.edu/~ouster/cgi-bin/cs190-winter18/lecture.php?topic=modularDesign)
-
+- [Define problems out of existence](https://wiki.tcl-lang.org/page/Define+Errors+Out+of+Existence)
 
 ## Reading
 
@@ -21,5 +22,5 @@ title: Opinionated programming
 
 ## People
 
-- [DHH](https://dhh.dk/)
-- [Carson Gross](https://bigsky.software/cv/)
+- [DHH](https://dhh.dk/) on many things including running business, everything RoR, cloud exit, Omakub and children
+- [Carson Gross](https://bigsky.software/cv/) on htmx, grug, LoB
