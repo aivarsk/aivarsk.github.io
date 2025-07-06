@@ -29,6 +29,8 @@ Some contributions to OSS:
 
 I have given public talks on databases, payments and payment cards, Python, Django, Kafka and other topics. [I keep a list here.](/speaking)
 
+[I have Opinions about how software should be done](/mindset)
+
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
 <small>
