@@ -7,8 +7,15 @@ title: Public speaking
 
 QuerySet.explain(): make it make sense
 
-- 2025 PyCon Italia @ Bologna, Italy
 - 2025 PyCon Portugal @ Cascai, Portugal
+
+How to solve a Python mystery
+
+- 2025 PyCon UK @ Manchester, UK
+
+Talking to payment cards over NFC
+
+- 2025 Security BSides Kraków @ Krakow, Poland
 
 ## Past
 
@@ -22,6 +29,7 @@ QuerySet.explain(): make it make sense
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 PyGrunn @ Groningen, Netherlands (not planned, filled in for a missing speaker)
+- 2025 PyCon Italia @ Bologna, Italy
 
 Raw-dogging the Linux proc filesystem
 
