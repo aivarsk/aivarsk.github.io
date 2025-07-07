@@ -20,7 +20,7 @@ The guiding principle:
 
 - [A Philosophy of Software Design](https://www.amazon.com/dp/173210221X)
 - [The Grug Brained Developer](https://grugbrain.dev/)
-- [Rework](https://www.amazon.com/dp/0307463745)
+- [Getting real](https://www.amazon.com/dp/0578012812) and [Rework](https://www.amazon.com/dp/0307463745)
 
 ## People
 
