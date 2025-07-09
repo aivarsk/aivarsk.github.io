@@ -34,6 +34,6 @@ I have given public talks on databases, payments and payment cards, Python, Djan
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 
 <small>
-Since I had some issues before:<br/>
+I write to think, I write to record, I write to put my thoughts together. Since I had some issues before:<br/>
 The information in this weblog is provided “AS IS” with no warranties, and confers no rights.
 This weblog does not represent the thoughts, intentions, plans or strategies of my employer. It is solely my opinion.</small>
