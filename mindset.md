@@ -12,6 +12,7 @@ The guiding principle:
 - [Complexity very, very bad](https://grugbrain.dev/)
 - [The Majestic Monolith](https://signalvnoise.com/svn3/the-majestic-monolith/)
 - [Locality of Behaviour](https://htmx.org/essays/locality-of-behaviour/)
+- [Scalability! But at what Configuration that Outperforms a Single Thread?](https://www.usenix.org/system/files/conference/hotos15/hotos15-paper-mcsherry.pdf)
 - [High cohesion, low coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
 - [Deep classes, interfaces, modules over shallow ones](https://web.stanford.edu/~ouster/cgi-bin/cs190-winter18/lecture.php?topic=modularDesign)
 - [Define problems out of existence](https://wiki.tcl-lang.org/page/Define+Errors+Out+of+Existence)
