@@ -33,4 +33,4 @@ The guiding principle:
 - [The Clean Code Debacle and Rhetoric Tricks](https://www.youtube.com/watch?v=ZLxazlP7Ppo)
 - [Learning From Sudoku Solvers](https://ravimohan.blogspot.com/2007/04/learning-from-sudoku-solvers.html)
 - [Don't Let the Internet Dupe You, Event Sourcing is Hard](https://chriskiehl.com/article/event-sourcing-is-hard)
-- 
+- [Async Python is not faster](https://calpaterson.com/async-python-is-not-faster.html)
