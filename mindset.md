@@ -28,8 +28,9 @@ The guiding principle:
 - [DHH](https://dhh.dk/) on many things including running business, everything RoR, cloud exit, Omakub and children
 - [Carson Gross](https://bigsky.software/cv/) on htmx, grug, LoB
 
-## Misc articles
+## Misc videos/articles
 
+- [The Clean Code Debacle and Rhetoric Tricks](https://www.youtube.com/watch?v=ZLxazlP7Ppo)
 - [Learning From Sudoku Solvers](https://ravimohan.blogspot.com/2007/04/learning-from-sudoku-solvers.html)
 - [Don't Let the Internet Dupe You, Event Sourcing is Hard](https://chriskiehl.com/article/event-sourcing-is-hard)
 - 
