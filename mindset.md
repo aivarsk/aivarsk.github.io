@@ -25,7 +25,7 @@ The guiding principle:
 
 ## People
 
-- [DHH](https://dhh.dk/) on many things including running business, everything RoR, cloud exit, Omakub and children
+- [DHH](https://dhh.dk/) on many things, including runninga  business, everything RoR, cloud exit, Omakub, and children
 - [Carson Gross](https://bigsky.software/cv/) on htmx, grug, LoB
 
 ## Misc videos/articles
@@ -35,3 +35,4 @@ The guiding principle:
 - [Don't Let the Internet Dupe You, Event Sourcing is Hard](https://chriskiehl.com/article/event-sourcing-is-hard)
 - [Async Python is not faster](https://calpaterson.com/async-python-is-not-faster.html)
 - [Casey Muratori – The Big OOPs: Anatomy of a Thirty-five-year Mistake – BSC 2025](https://www.youtube.com/watch?v=wo84LFzx5nI)
+- [SOLID Deconstruction - Kevlin Henney](https://vimeo.com/157708450)
