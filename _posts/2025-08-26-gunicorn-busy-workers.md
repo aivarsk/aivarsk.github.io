@@ -43,3 +43,6 @@ def pre_request(worker, req):
 def post_request(worker, req, environ, resp):
     busy.acquire()
 ```
+
+
+[Full test code here](https://gist.github.com/aivarsk/493e8b8976588185dd685cdb38f98c10)
