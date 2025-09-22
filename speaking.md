@@ -15,7 +15,6 @@ EXPLAIN: make it make sense
 
 How to solve a Python mystery
 
-- 2025 PyCon UK @ Manchester, UK
 - 2025 PyConES @ Sevilla, Spain
 
 Talking to payment cards over NFC
@@ -33,6 +32,7 @@ How to solve a Python mystery
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 DjangoCon Europe @ Dublin, Ireland
 - 2025 PyGrunn @ Groningen, Netherlands
+- 2025 PyCon UK @ Manchester, UK
 
 QuerySet.explain(): make it make sense
 
