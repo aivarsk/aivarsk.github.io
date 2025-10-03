@@ -24,17 +24,20 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 
 ## Employment history
 
-### Staff Engineer **Ebury** | *Aug 2022 - Present*
+### Staff Engineer
+**Ebury** | *Aug 2022 - Present*
 
 - Developed a unified interface to card issuing providers for virtual and physical cards that take care of PCI DSS sensitive data.
 - Implemented the new SWIFT XML ISO20022 message standart, developed a rule engine taking spreadsheets as configuration.
 - Developed a new orchestrator service for outgoing payments that selects the best route based on rules, destination account, currency, payment amount, and time of the day.
 
-### Senior Engineer **Ebury** | *Jan 2021 - Aug 2022*
+### Senior Engineer 
+**Ebury** | *Jan 2021 - Aug 2022*
 
 - Several "query services" with Python, Kafka, Kubernetes while breaking up a monolith.
 
-### Various positions **Tieto** | *Feb 2002 - Dec 2020*
+### Various positions
+**Tieto** | *Feb 2002 - Dec 2020*
 
 - Position changes: Junior Programmer, Programmer, System Analyst, Senior System Analyst, Software Architect, Lead Software Architect.
 - Company name changes: Tieto Konts, TietoEnator, Tieto, TietoEVRY.
@@ -51,7 +54,8 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 - Redesigned and developed a payment gateway for integrating different payment systems and service providers.
 - Developed mobile banking system communication over encrypted SMS with applications working on SIM cards.
 
-### Implementation Specialist **Baltic Transit Bank** | *Apr 2001 - Aug 2001*
+### Implementation Specialist 
+**Baltic Transit Bank** | *Apr 2001 - Aug 2001*
 
 - Configuration and administration of Bankmaster and Branchpower systems.
 - Developed extensions/customizations in C.
@@ -60,7 +64,8 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 
 ## Education
 
-### Bachelor in Computer Science **Riga Technical University** | *2000 - 2003*
+### Bachelor in Computer Science 
+**Riga Technical University** | *2000 - 2003*
 - Bachelor thesis about CORBA technology for distributed systems
 
 ---
