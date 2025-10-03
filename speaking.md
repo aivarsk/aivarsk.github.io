@@ -17,10 +17,6 @@ How to solve a Python mystery
 
 - 2025 PyConES @ Sevilla, Spain
 
-Talking to payment cards over NFC
-
-- 2025 Security BSides Kraków @ Krakow, Poland
-
 Raw-dogging the Linux proc filesystem
 
 - 2025 Cloud Native Days Austria @ Vienna, Austria
@@ -40,7 +36,8 @@ QuerySet.explain(): make it make sense
 - 2025 PyGrunn @ Groningen, Netherlands (not planned, filled in for a missing speaker)
 - 2025 PyCon Italia @ Bologna, Italy
 - 2025 PyCon Portugal @ Cascai, Portugal
-- 
+
+
 Raw-dogging the Linux proc filesystem
 
 - 2025 SRE Day London @ London, UK 
@@ -60,6 +57,7 @@ Pessimism, optimism, realism and Django database concurrency
 Talking to payment cards over NFC
 
 - 2023 Tech In Finance @ Malaga, Spain
+- 2025 Security BSides Kraków @ Krakow, Poland
 
 Ebury - FX and beyond
 
