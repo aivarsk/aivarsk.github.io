@@ -4,7 +4,7 @@
 **Email:** aivars.kalvans@gmail.com |
 **Location:** Jelgava, Latvia |
 **Web:** https://aivarsk.com |
-**LinkedIn:** https://www.linkedin.com/in/aivarsk/ |
+**LinkedIn:** https://www.linkedin.com/in/aivarsk |
 **GitHub:** https://github.com/aivarsk
 
 ---
@@ -18,6 +18,7 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 - **Languages:** Python, SQL, C++, C, Java, Go
 - **Frameworks:** Django, Spring Boot
 - **Tech:** AWS, Docker, Kubernetes, Kafka, Oracle Database, Oracle Tuxedo, PostgreSQL, MySQL, Redis, MongoDB
+- **Other:** Database performance analysis and tuning both on database and application level, application performance, bug analysis and troubleshooting, incident investigation.
 
 ---
 
