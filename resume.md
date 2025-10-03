@@ -66,6 +66,7 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 - Wrote a book "Modernizing Oracle Tuxedo Applications with Python" and maintain https://pypi.org/project/tuxedo
 - JSON encoding speedup for Python 3.12
 - Custom queryset in Model.refresh_from_db for Django 5.1
+- Was active in GNOME2 and related projects around 2005 fixing various memleaks, reducing memory usage to make GNOME usable on my home computer.
 - Speaking at conferences about Databases, Python, SRE, Security and Payment Cards (https://aivarsk.com/speaking)
 
 ---
