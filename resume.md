@@ -42,6 +42,8 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 - Developed Host Card Emulation according to MasterCard specifications and got it certified.
 - Developed accounting system including fee and interest calculation doing thousands of transactions per second.
 - Designed and developed parts of new card issuing and authorization system.
+- Worked on adopting existing software for Active-Active setup.
+- Developed tools and mechanisms to make existing software PCI DSS and PA-DSS compliant with encryption schemes, key rotation, etc.
 - Developed and maintained a large number of libraries that all projects were using.
 - Designed and developed a package manager, DB migration and a declarative infrastructure tool for deploying Oracle Tuxedo applications consisting of ~1000 individual packages.
 - Set up a CI/CD pipeline for large C++ project based on a heavily modified Buildbot running on Linux, HP-UX, AIX and Solaris.
