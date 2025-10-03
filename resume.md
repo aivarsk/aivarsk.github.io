@@ -58,6 +58,7 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 ## Education
 
 ### Bachelor in Computer Science **Riga Technical University** | *2000 - 2003*
+- Bachelor thesis about CORBA technology for distributed systems
 
 ---
 
