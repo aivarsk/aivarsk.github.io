@@ -4,7 +4,7 @@ title: The lost art of semaphores
 tags: ipc, semaphore, sysvipc, unix, python
 ---
 
-I am a huge fan of [System V Inter Process Communication primitives](https://man7.org/linux/man-pages/man7/svipc.7.html). There is some rawness and UNIX spirit to them. There is a newer and kinda “improved” version of those primitives named POSIX IPC. While there are a few things in POSIX IPC that can’t be done with System V IPC, most of the time it’s the other way around. Primarily due to the rawness of System V IPC. Let’s check the [POSIX semaphors](https://man7.org/linux/man-pages/man7/sem_overview.7.html):
+I am a huge fan of [System V Inter Process Communication primitives](https://man7.org/linux/man-pages/man7/svipc.7.html). There is some rawness and UNIX spirit to them. There is a newer and kinda “improved” version of those primitives named POSIX IPC. While there are a few things in POSIX IPC that can’t be done with System V IPC, most of the time it’s the other way around. Primarily due to the rawness of System V IPC. Let’s check the [POSIX semaphores](https://man7.org/linux/man-pages/man7/sem_overview.7.html):
 
 * `sem_post` can be used to release a semaphore (increment by 1)
 * `sem_wait` can be used to acquire a semaphore (and decrement by 1)
