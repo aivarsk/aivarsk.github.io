@@ -85,4 +85,4 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 - Computers and UNIX
 - Brazilian jiu-jitsu (purple belt), grappling
 - Winter swimming
-- Participant of Locked Shields exercise
+- Participant of NATO Locked Shields cyber defence exercise
