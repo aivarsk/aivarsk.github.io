@@ -20,37 +20,29 @@ So I decided to build my own Python wrappers around the [System V IPC ](https://
 First, we have to create a new semaphore. It’s just a number that can be shared with others. The downside of that - you have to perform a manual cleanup by scheduling the removal of the semaphore when the main process terminates:
 
 ```python
-
 import atexit
 import sysvipc
 
 sem = sysvipc.semget(sysvipc.IPC_PRIVATE, 1, 0o600)
 atexit.register(lambda: sysvipc.semctl(sem, 0, sysvipc.IPC_RMID))
-
 ```
 
 We can read the current value of the semaphore at any time with:
 
 ```python
-
 curval = sysvipc.semctl(sem, 0, sysvipc.GETVAL)
-
 ```
 
 And then each process can increment the semaphore without confusing the reader with strange names like “unlock” or “post”. I also specify the `SEM_UNDO` flag, and the kernel will apply `-1` to the semaphore when the process terminates for any reason:
 
 ```python
-
 sysvipc.semop(sem, [(0, 1, sysvipc.SEM_UNDO)])
-
 ```
 
 Once the process is done with the work, I decrement the semaphore. Again - no confusing names like “lock” or “wait”. The `SEM_UNDO` will add `+1` to the kernel’s semaphore adjustments and make the total adjustment `0`. Past this point, when a process terminates, nothing will be subtracted from the semaphore value, and it will correctly represent the number of active workers.
 
 ```python
-
 sysvipc.semop(sem, [(0, -1, sysvipc.SEM_UNDO)])
-
 ```
 
 And this is just the beginning, I need to write more [Pybind11](http://pybind11.com/) wrappers for System V IPC to unlock more goodies in Python.
