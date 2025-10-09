@@ -17,10 +17,6 @@ How to solve a Python mystery
 
 - 2025 PyConES @ Sevilla, Spain
 
-Raw-dogging the Linux proc filesystem
-
-- 2025 Cloud Native Days Austria @ Vienna, Austria
-
 ## Past
 
 How to solve a Python mystery
@@ -41,6 +37,7 @@ QuerySet.explain(): make it make sense
 Raw-dogging the Linux proc filesystem
 
 - 2025 SRE Day London @ London, UK 
+- 2025 Cloud Native Days Austria @ Vienna, Austria
 
 The good, the bad, and Kafka
 
