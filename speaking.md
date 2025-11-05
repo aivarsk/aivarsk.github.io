@@ -5,9 +5,9 @@ title: Public speaking
 
 ## Upcoming
 
-QuerySet.explain(): make it make sense
+- tbd
 
-- 2025 PyConFR @ Lyon, France
+## Past
 
 EXPLAIN: make it make sense
 
@@ -15,24 +15,20 @@ EXPLAIN: make it make sense
 
 How to solve a Python mystery
 
-- 2025 PyConES @ Sevilla, Spain
-
-## Past
-
-How to solve a Python mystery
-
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 DjangoCon Europe @ Dublin, Ireland
 - 2025 PyGrunn @ Groningen, Netherlands
 - 2025 PyCon UK @ Manchester, UK
-
+- 2025 PyConES @ Sevilla, Spain
+- 2025 PyConFR @ Lyon, France
+  
 QuerySet.explain(): make it make sense
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
 - 2025 PyGrunn @ Groningen, Netherlands (not planned, filled in for a missing speaker)
 - 2025 PyCon Italia @ Bologna, Italy
 - 2025 PyCon Portugal @ Cascai, Portugal
-
+- 2025 PyConFR @ Lyon, France
 
 Raw-dogging the Linux proc filesystem
 
