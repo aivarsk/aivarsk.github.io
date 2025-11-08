@@ -9,7 +9,7 @@
 
 ---
 
-Aivars Kalvāns is a FinTech developer, software architect, and consultant. He spent more than 18 years developing and architecting payment card software for acquiring and issuing, accounting, and utility payments through mobile phones, ATMs, and POS terminals. After that, he worked on different account-based payment rails, including SWIFT migration from MT to ISO20022 format. And helping companies with risk modeling tools and integrating different loan, card, and payment providers.
+Aivars Kalvāns is a FinTech developer, software architect, and consultant. He spent more than 18 years developing and architecting payment card software for acquiring and issuing, accounting, and utility payments through mobile phones, ATMs, and POS terminals. After that, he worked on different account-based payment rails, including SWIFT migration from MT to ISO20022 format. He has helped companies with risk modeling tools and integrating different loan, card, and payment providers while fixing infrastructure issues along the way.
 ---
 
 ## Skills
