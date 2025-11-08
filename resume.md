@@ -10,6 +10,7 @@
 ---
 
 Aivars Kalvāns is a FinTech developer, software architect, and consultant. He spent more than 18 years developing and architecting payment card software for acquiring and issuing, accounting, and utility payments through mobile phones, ATMs, and POS terminals. After that, he worked on different account-based payment rails, including SWIFT migration from MT to ISO20022 format. He has helped companies with risk modeling tools and integrating different loan, card, and payment providers while fixing infrastructure issues along the way.
+
 ---
 
 ## Skills
@@ -33,7 +34,8 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 ### Senior Engineer 
 **Ebury** | *Jan 2021 - Aug 2022*
 
-- Several "query services" with Python, Kafka, and Kubernetes while breaking up a monolith.
+- Several "query services" processing Debezium CDC events from Kafka, running in Kubernetes, and serving data from read-optimized data structures.
+- Execution date calculation for payroll system taking into account SWIFT intermediaries and bank holidays in each country.
 
 ### Various positions
 **Tieto** | *Feb 2002 - Dec 2020*
@@ -72,10 +74,10 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 ## Community involvement
 
 - Wrote a book "Modernizing Oracle Tuxedo Applications with Python" and maintain https://pypi.org/project/tuxedo
+- Speaking at conferences about Databases, Python, SRE, Security, and Payment Cards (https://aivarsk.com/speaking)
 - JSON encoding speedup for Python 3.12
 - Custom queryset in Model.refresh_from_db for Django 5.1
 - Was active in GNOME2 and related projects around 2005, fixing various memory leaks, reducing memory usage to make GNOME usable on my home computer.
-- Speaking at conferences about Databases, Python, SRE, Security, and Payment Cards (https://aivarsk.com/speaking)
 
 ---
 
