@@ -19,16 +19,16 @@ How to solve a Python mystery
 - 2025 DjangoCon Europe @ Dublin, Ireland
 - 2025 PyGrunn @ Groningen, Netherlands
 - 2025 PyCon UK @ Manchester, UK
-- 2025 PyConES @ Sevilla, Spain
-- 2025 PyConFR @ Lyon, France
+- 2025 PyCon Spain @ Sevilla, Spain
+- 2025 PyCon France @ Lyon, France (filled in for a missing speaker)
   
 QuerySet.explain(): make it make sense
 
 - 2025 PyCon Austria @ Eisenstadt, Austria
-- 2025 PyGrunn @ Groningen, Netherlands (not planned, filled in for a missing speaker)
+- 2025 PyGrunn @ Groningen, Netherlands (filled in for a missing speaker)
 - 2025 PyCon Italia @ Bologna, Italy
 - 2025 PyCon Portugal @ Cascai, Portugal
-- 2025 PyConFR @ Lyon, France
+- 2025 PyCon France @ Lyon, France
 
 Raw-dogging the Linux proc filesystem
 
