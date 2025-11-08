@@ -9,7 +9,7 @@
 
 ---
 
-Aivars Kalvāns is a FinTech developer, software architect, and consultant. He spent more than 18 years developing and architecting payment card software for acquiring and issuing, accounting, and utility payments through mobile phones, ATMs, and POS terminals. After that, he worked on different account-based payment rails, including SWIFT migration from MT to ISO20022 format. He has helped companies with risk modeling tools and integrating different loan, card, and payment providers while fixing infrastructure issues along the way.
+Aivars Kalvāns is a FinTech developer, software architect, and consultant. He spent more than 18 years developing and architecting payment card software for acquiring and issuing, accounting, and utility payments through mobile phones, ATMs, and POS terminals. After that, he worked on various account-based payment rails, including SWIFT migration from MT to ISO20022 format. He has helped companies with risk modeling tools and integrating different loan, card, and payment providers while fixing infrastructure issues along the way.
 
 ---
 
@@ -25,7 +25,7 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 ## Employment history
 
 ### Staff Engineer
-**Ebury** | *Aug 2022 - Present*
+**Ebury** | *Aug 2022 - Nov 2025*
 
 - Developed a unified interface to card issuing providers for virtual and physical cards that takes care of PCI DSS sensitive data.
 - Implemented the new SWIFT XML ISO20022 message standard, migrated away from MT messages, and developed a rule engine taking spreadsheets as configuration.
@@ -75,6 +75,7 @@ Aivars Kalvāns is a FinTech developer, software architect, and consultant. He s
 
 - Wrote a book "Modernizing Oracle Tuxedo Applications with Python" and maintain https://pypi.org/project/tuxedo
 - Speaking at conferences about Databases, Python, SRE, Security, and Payment Cards (https://aivarsk.com/speaking)
+- Several Open Source projects, including a reliable and mostly compatible Celery replacement
 - JSON encoding speedup for Python 3.12
 - Custom queryset in Model.refresh_from_db for Django 5.1
 - Was active in GNOME2 and related projects around 2005, fixing various memory leaks, reducing memory usage to make GNOME usable on my home computer.
