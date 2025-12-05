@@ -19,7 +19,6 @@ The guiding principle:
 
 ## Reading
 
-- [It's probably time to stop recommending Clean Code](https://qntm.org/clean)
 - [A Philosophy of Software Design](https://www.amazon.com/dp/173210221X)
 - [The Grug Brained Developer](https://grugbrain.dev/)
 - [Getting real](https://www.amazon.com/dp/0578012812) and [Rework](https://www.amazon.com/dp/0307463745)
@@ -31,6 +30,7 @@ The guiding principle:
 
 ## Misc videos/articles
 
+- [It's probably time to stop recommending Clean Code](https://qntm.org/clean)
 - [The Clean Code Debacle and Rhetoric Tricks](https://www.youtube.com/watch?v=ZLxazlP7Ppo)
 - [Learning From Sudoku Solvers](https://ravimohan.blogspot.com/2007/04/learning-from-sudoku-solvers.html)
 - [Don't Let the Internet Dupe You, Event Sourcing is Hard](https://chriskiehl.com/article/event-sourcing-is-hard)
