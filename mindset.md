@@ -19,6 +19,7 @@ The guiding principle:
 
 ## Reading
 
+- [It's probably time to stop recommending Clean Code](https://qntm.org/clean)
 - [A Philosophy of Software Design](https://www.amazon.com/dp/173210221X)
 - [The Grug Brained Developer](https://grugbrain.dev/)
 - [Getting real](https://www.amazon.com/dp/0578012812) and [Rework](https://www.amazon.com/dp/0307463745)
