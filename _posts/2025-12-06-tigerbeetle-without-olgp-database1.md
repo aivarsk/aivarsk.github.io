@@ -14,7 +14,7 @@ Here’s an idea: what about running TigerBeetle without the control plane datab
 
 It depends on the banking and payment card system, but often your account or card is not just a single physical account record. It is a “product” and “product agreement” that links together multiple accounts, conditions, metadata, and other types of records, just to tell you what the current balance is. Years ago, I worked with something we called “analytical accounting.” We had separate accounts for purchases, cashout, refunds, credit/debit transfers, interest, and different kinds of fees. Something similar that you can achieve by analytical systems, but it was running inside the accounting system with the same consistency guarantees.
 
-Accounts and Transfers in TigerBeetle are immutable. You can change credit and debit amounts by posting transactions. You can also update Account `flags` and set or unset `AccountFlags.CLOSED` by (posting a pending transfer or voiding it)[https://docs.tigerbeetle.com/coding/recipes/close-account/]. In practice, you often have more statuses for accounts to accept credits while rejecting debit operations, etc.
+Accounts and Transfers in TigerBeetle are immutable. You can change credit and debit amounts by posting transactions. You can also update Account `flags` and set or unset `AccountFlags.CLOSED` by [posting a pending transfer or voiding it](https://docs.tigerbeetle.com/coding/recipes/close-account/). In practice, you often have more statuses for accounts to accept credits while rejecting debit operations, etc.
 
 ### Tools
 
