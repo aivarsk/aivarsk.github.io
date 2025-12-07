@@ -12,7 +12,7 @@ tags: tigerbeetle, accounting, gl
 
 Continuing my [if all you have is a hammer, everything looks like a nail](https://aivarsk.com/2025/12/06/tigerbeetle-without-olgp-database1/) journey, I wanted to store arbitrary binary blobs in TigerBeetle to protect them from storage faults. If I can do that, I can store anything.
 
-The `id` field of my Accounts will contain the filename (16-byte limit). I will store the total file size in the `user_data_64` field and the filename length in the `user_data_32` field (to simplify decoding). And my Accounts will have this nice propetry that `credits_posted` will contain the actual number of bytes written. I can detect failed uploads and resume that (a future TODO).
+The `id` field of my Accounts will contain the filename (16-byte limit). I will store the total file size in the `user_data_64` field and the filename length in the `user_data_32` field (to simplify decoding). And my Accounts will have this nice property that `credits_posted` will contain the actual number of bytes written. I can detect failed uploads and resume that (a future TODO).
 
 ```python
 
@@ -33,9 +33,9 @@ def create_a_file(filename, size):
 
 ```
 
-What makes me unhappy is that I have not found a good use for `user_data_128`. Such a waste of resources!
+What makes me unhappy is that I have not found a good use for `user_data_128` on the Account record. Such a waste of resources!
 
-I will store the actual bytes in Transfer `user_data_128`, `user_data_64`, and `user_data_32` fields. That gives a total of 28 bytes per transfer, and the transfer amount will contain the number of bytes used in the transfer. Which will be 28 for all transfers except the last one containing the remaining bytes.
+I will store the actual bytes in Transfer `user_data_128`, `user_data_64`, and `user_data_32` fields. That gives a total of 28 bytes per Transfer, and the Transfer `amount` will contain the number of bytes used in the Transfer. Which will be 28 for all Transfers except the last one containing the remaining bytes.
 
 ```python
 
@@ -55,9 +55,9 @@ I will store the actual bytes in Transfer `user_data_128`, `user_data_64`, and `
 
 ```
 
-Because TigerBeetle uses double-entry bookkeeping, I will transfer all bytes from a system file “.” (debit side) to the desired file (credit side).
+Because TigerBeetle uses double-entry bookkeeping, I will transfer all bytes from a system file “.” (debit side) to the desired file (credit side). Which is extremely useful for audit purposes to verify that `debits_posted` on the system file Account is the same as `credits_posted` on all file Account records.
 
-As for getting data out of TigerBeetle, I can retrieve all credit Transfers for the specific Account. They are always correctly ordered by the `timestamp` field as [guaranteed by the TigerBeetle](https://docs.tigerbeetle.com/coding/time/#timestamps-are-totally-ordered)
+As for getting data out of TigerBeetle, I can retrieve all credit Transfers for the specific Account. They are always correctly ordered by the `timestamp` field as [guaranteed by the TigerBeetle.](https://docs.tigerbeetle.com/coding/time/#timestamps-are-totally-ordered)
 
 ```python
 
