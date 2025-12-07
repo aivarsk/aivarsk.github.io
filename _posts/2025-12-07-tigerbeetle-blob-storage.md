@@ -104,7 +104,7 @@ sys     0m0.553s
 
 ```
 
-Downloading is around four times faster at 2,228 MB/s! And of course, I verified that not a single bit was lost during the round-trip:
+Downloading is around four times faster at 2,228 kB/s! And of course, I verified that not a single bit was lost during the round-trip:
 
 ```bash
 
