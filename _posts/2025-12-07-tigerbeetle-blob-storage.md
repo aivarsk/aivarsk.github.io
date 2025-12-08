@@ -12,7 +12,7 @@ tags: tigerbeetle, accounting, gl
 
 Continuing my [if all you have is a hammer, everything looks like a nail](https://aivarsk.com/2025/12/06/tigerbeetle-without-olgp-database1/) journey, I wanted to store arbitrary binary blobs in TigerBeetle to protect them from storage faults. If I can do that, I can store anything.
 
-The `id` field of my Accounts will contain the filename (16-byte limit). I will store the total file size in the `user_data_64` field and the filename length in the `user_data_32` field (to simplify decoding). And my Accounts will have this nice property that `credits_posted` will contain the actual number of bytes written. I can detect failed uploads and resume that (a future TODO).
+The `id` field of my Accounts will contain the filename (16-byte limit). I will store the total file size in the `user_data_64` field and the filename length in the `user_data_32` field (to simplify decoding). And my Accounts will have this nice property that `credits_posted` will contain the actual number of bytes written. I can detect failed uploads and resume upload from the right offset (a future TODO).
 
 ```python
 
