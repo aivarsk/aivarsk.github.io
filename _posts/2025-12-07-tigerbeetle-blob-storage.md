@@ -78,7 +78,7 @@ As for getting data out of TigerBeetle, I can retrieve all credit Transfers for 
             timestamp_min += 1
 ```
 
-All that put together, I performed tests on some of the most valuable files I did not want to ever looose:
+All that put together, I performed tests on some of the most valuable files I did not want to ever loose:
 
 ```bash
 
