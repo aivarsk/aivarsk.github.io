@@ -33,7 +33,7 @@ def create_a_file(filename, size):
 
 ```
 
-What makes me unhappy is that I have not found a good use for `user_data_128` on the Account record. Such a waste of resources!
+What makes me unhappy is that I have not found a good use for the `user_data_128` field on the Account record. Such a waste of resources!
 
 I will store the actual bytes in Transfer `user_data_128`, `user_data_64`, and `user_data_32` fields. That gives a total of 28 bytes per Transfer, and the Transfer `amount` will contain the number of bytes used in the Transfer. Which will be 28 for all Transfers except the last one containing the remaining bytes.
 
