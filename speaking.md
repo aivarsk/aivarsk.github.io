@@ -5,13 +5,16 @@ title: Public speaking
 
 ## Upcoming
 
-- tbd
+What userland utilities won't tell you: uncovering hidden process state in `procfs`
+
+- 2026 SREcon26 Europe/Middle East/Africa @ Dublin, Ireland
 
 ## Past
 
 EXPLAIN: make it make sense
 
 - 2025 PostgreSQL Conference Europe @ Riga, Latvia
+- 2026 154th DevClub.lv @ Riga, Latvia
 
 How to solve a Python mystery
 
