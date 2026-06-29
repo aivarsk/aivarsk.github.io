@@ -9,7 +9,7 @@ Of course, TigerBeetle does not provide anything for locking, but I don’t want
 First, we will need a dummy account to use as the second leg for the double-entry accounting.
 
 ```python
-account =  tb.Account(
+account = tb.Account(
     id=43,
     ledger=42,
     code=42,
