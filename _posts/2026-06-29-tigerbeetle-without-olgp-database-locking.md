@@ -29,7 +29,7 @@ mutex = tb.Account(
 errors = client.create_accounts([mutex])
 ```
 
-Each mutex must be initialized with an initial balance of 1. To make it atomic, we can use the account identifier as the transfer identifier to enforce idempotency. We will get `CreateTransferResult.EXISTS` when the mutex account has been initialized before.
+Each mutex must be initialized with an initial balance of 1. To make it fail-proof, we can use the account identifier as the transfer identifier to enforce idempotency. We will get `CreateTransferResult.EXISTS` when the mutex account has been initialized before.
 
 ```python
 init = tb.Transfer(
