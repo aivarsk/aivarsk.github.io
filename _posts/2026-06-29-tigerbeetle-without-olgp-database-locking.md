@@ -59,7 +59,7 @@ lock = tb.Transfer(
     ledger=42,
     code=42,
     flags=tb.TransferFlags.PENDING,
-     timeout=ttl,
+    timeout=ttl,
 )
 ```
 
