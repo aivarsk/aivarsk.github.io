@@ -85,7 +85,7 @@ We successfully created some linked transfers in pending state. Now to post or v
 * both posted and pending transfers in the same linked batch initially
 * some of the pending ones can be voided
 * some of the pending ones can be posted
-* some of the pending ons can stay pending
+* some of the pending ones can stay pending
 
 It both helps in some cases (calendar limits) and requires extra work in others.
 
