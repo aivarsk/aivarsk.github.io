@@ -81,7 +81,7 @@ TigerBeetle ensures that each transfer can be posted or voided exactly once, and
 
 There are two features that combine in a bit of a surprising way: [linked events](https://docs.tigerbeetle.com/coding/linked-events/) and [two-phase transfers](https://docs.tigerbeetle.com/coding/two-phase-transfers/).
 We can create several linked transfers for them to behave atomically: either all succeed, or all fail. And we can utilize two-phase transfers to implement card transaction-like authorization requests and financial advice.
-We successfully created some linked transfers in `pending` state. Now to post or void them, each transfer has to be posted or voided individually: the linked transfers no longer behave as linked, although they still have linked flags stored. You can have:
+We successfully created some linked transfers in pending state. Now to post or void them, each transfer has to be posted or voided individually: the linked transfers no longer behave as linked, although they still have linked flags stored. You can have:
 * both posted and pending transfers in the same linked batch initially
 * some of the pending ones can be voided
 * some of the pending ones can be posted
