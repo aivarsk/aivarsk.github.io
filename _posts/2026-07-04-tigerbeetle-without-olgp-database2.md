@@ -94,20 +94,41 @@ It both helps in some cases (calendar limits) and requires extra work in others.
 
 Let’s say we have a transaction that might fail with insufficient balance.  And we follow the principles listed above and use the transaction UUID as the ID of the first transfer to enforce uniqueness and idempotency.
 
->>> Transfer(id=2155649320254879050885200131040001544, debit_account_id=42, credit_account_id=43, amount=1, pending_id=0, user_data_128=0, user_data_64=0, user_data_32=0, timeout=6, ledger=42, code=42, flags=<TransferFlags.PENDING: 2>, timestamp=0)
+```python
+transfer = tb.Transfer(
+    id=tb.id(),
+    debit_account_id=account.id,
+    credit_account_id=sink.id,
+    amount=1,
+    ledger=1,
+    code=1,
+)
+errors = client.create_transfers([transfer])
+```
 
-<<< CreateTransfersResult(index=0, result=<CreateTransferResult.EXCEEDS_CREDITS: 54>)
-
-
+```python
+[CreateTransfersResult(index=0, result=<CreateTransferResult.EXCEEDS_CREDITS: 54>)]
+```
 
 In some cases (subscriptions, fees, etc.), we consider an insufficient balance a transient error and want to retry later, when the customer might have a sufficient balance. But here’s the catch: repeating the same transfer with the same ID will complain about a previous failed(!) transfer already existing - [it’s a part of the official documentation](https://docs.tigerbeetle.com/reference/requests/create_transfers/#id_already_failed). This is not what I expected based on previous systems, but OK.
 
+```python
+errors = client.create_transfers([transfer])
+```
 
->>>  Transfer(id=2155649320254879050885200131040001544, debit_account_id=42, credit_account_id=43, amount=1, pending_id=0, user_data_128=0, user_data_64=0, user_data_32=0, timeout=6, ledger=42, code=42, flags=<TransferFlags.PENDING: 2>, timestamp=0)
-<<< CreateTransfersResult(index=0, result=<CreateTransferResult.ID_ALREADY_FAILED: 68>)
+```python
+[CreateTransfersResult(index=0, result=<CreateTransferResult.ID_ALREADY_FAILED: 68>)]
+```
 
 Now doing a lookup for that transfer ID with [lookup_transfers](https://docs.tigerbeetle.com/reference/requests/lookup_transfers/) will return nothing - a transfer was not created, but it exists somehow anyway, like a ghost.
 
+```python
+existing = client.lookup_transfers([transfer.id])
+```
+
+```python
+[]
+```
 
 
 ### Recipes vs real life
@@ -173,6 +194,6 @@ Not a huge issue once you wrap your brain around it, but the recipes have to be 
 
 ### Error reporting
 
-TigerBeetle reports just the error code and transfer index to the caller. To make a generic and future-proof error handling that does not rely on the ordering of transfers, we have a function that takes errors and transfers and figures out the correct error code by looking at the error code, transfers `code` field and maybe account IDs. Sometimes “CreateTransferResult.EXCEEDS_CREDITS” means there are insufficient funds, sometimes it means exceeded daily limits, sometimes the requested transaction amount is lower than the transaction fees.
+TigerBeetle reports just the error code and transfer index to the caller. To make a generic and future-proof error handling that does not rely on the ordering of transfers, we have a function that takes errors and transfers and figures out the correct error code by looking at the error code, transfers `code` field and maybe account IDs. Sometimes `CreateTransferResult.EXCEEDS_CREDITS` means there are insufficient funds, sometimes it means exceeded daily limits, sometimes the requested transaction amount is lower than the transaction fees.
 
 _To be continued._
