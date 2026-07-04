@@ -11,7 +11,7 @@ Transactions and transaction lifecycles are complicated. Not to go into the craz
 Here, a transaction is a collection of individual [Transfers](https://docs.tigerbeetle.com/reference/transfer/). Similar to accounts, transfers can be linked together by having the same UUID value in `user_data_128`. All transactions' transfers will have `tb.AccountFlags.LINKED` in `flags` (except the last transfer) to achieve atomic behavior. I will also put the UUID as the `id` of the first transfer to enforce uniqueness and idempotency.
 
 
-I want to have my transfers arbitrary: that means no clever ID generation schema, and I might choose when to store some transfers of 0 and when to skip to avoid noise. Whenever I need to know the exact transfers and their IDs, I will use the [`lookup_transfers`](https://docs.tigerbeetle.com/reference/requests/lookup_transfers/) and find transfers by `user_data_128`. I will recognize the kind of transfer by the value of `code`. Now, about some more interesting features.
+I will not have a fixed number of transfers, I want to have my transfers arbitrary based on transaction kind: that means no clever ID generation schema, and I might choose when to store some transfers of 0 and when to skip to avoid noise. Whenever I need to know the exact transfers and their IDs, I will use the [`lookup_transfers`](https://docs.tigerbeetle.com/reference/requests/lookup_transfers/) and find transfers by `user_data_128`. I will recognize the kind of transfer by the value of `code`. That's an extra read operation, but I'm willing to pay it. Now, about some more interesting features.
 
 
 ### Usage limits
@@ -22,7 +22,7 @@ It gets a bit tricky when combined with two-phase transactions out of [two-phase
 
 ### Reversals
 
-Some of the transactions might be reversed, and we must enforce idempotency to avoid reversing them twice. (I am ignoring partial reversals at this point). One way is to generate a unique reversal ID outside TigerBeetle and use it. But that leaves the enforcement of “transaction can be reversed once” to the caller.
+Some of the transactions might be reversed, and we must enforce idempotency to avoid reversing them twice. (I am ignoring partial reversals at this point). One way is to generate a unique reversal ID outside TigerBeetle and use it. But that leaves the enforcement of “transaction can be reversed once” to the caller and contradicts our "without OLGP" goal.
 A better way is to create a dummy “reversed” transfer of 0 in the original transaction in the pending state (here with the code 42):
 
 ```python
@@ -70,7 +70,7 @@ transfers = [
 errors = client.create_transfers(transfers)
 ```
 
-TigerBeetle ensures that each transfer can be posted or voided exactly once, and we get our idempotency out of that. Repeated reversals will result with error:
+TigerBeetle ensures that each transfer can be posted or voided exactly once, and we get our idempotency out of that. Repeated reversals will result with `CreateTransferResult.PENDING_TRANSFER_NOT_PENDING` error:
 
 ```python
 [CreateTransfersResult(index=0, result=<CreateTransferResult.PENDING_TRANSFER_NOT_PENDING: 26>), CreateTransfersResult(index=1, result=<CreateTransferResult.LINKED_EVENT_FAILED: 1>)]
@@ -106,15 +106,19 @@ transfer = tb.Transfer(
 errors = client.create_transfers([transfer])
 ```
 
+It fails with `CreateTransferResult.EXCEEDS_CREDITS` error because account has insufficient balance:
+
 ```python
 [CreateTransfersResult(index=0, result=<CreateTransferResult.EXCEEDS_CREDITS: 54>)]
 ```
 
-In some cases (subscriptions, fees, etc.), we consider an insufficient balance a transient error and want to retry later, when the customer might have a sufficient balance. But here’s the catch: repeating the same transfer with the same ID will complain about a previous failed(!) transfer already existing - [it’s a part of the official documentation](https://docs.tigerbeetle.com/reference/requests/create_transfers/#id_already_failed). This is not what I expected based on previous systems, but OK.
+In some cases (subscriptions, fees, etc.), we consider an insufficient balance a transient error and want to retry later, when the customer might have a sufficient balance. But here’s the catch: repeating the same transfer with the same ID will complain about a previous failed(!) transfer already existing - [it’s a part of the official documentation](https://docs.tigerbeetle.com/reference/requests/create_transfers/#id_already_failed). This is not what I expected based on previous systems, but OK. Simply retrying it:
 
 ```python
 errors = client.create_transfers([transfer])
 ```
+
+It fails with `CreateTransferResult.ID_ALREADY_FAILED` error:
 
 ```python
 [CreateTransfersResult(index=0, result=<CreateTransferResult.ID_ALREADY_FAILED: 68>)]
@@ -125,6 +129,8 @@ Now doing a lookup for that transfer ID with [lookup_transfers](https://docs.tig
 ```python
 existing = client.lookup_transfers([transfer.id])
 ```
+
+This returns an empty response:
 
 ```python
 []
