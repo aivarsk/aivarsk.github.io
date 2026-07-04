@@ -11,18 +11,18 @@ Transactions and transaction lifecycles are complicated. Not to go into the craz
 Here, a transaction is a collection of individual [Transfers](https://docs.tigerbeetle.com/reference/transfer/). Similar to accounts, transfers can be linked together by having the same UUID value in `user_data_128`. All transactions' transfers will have `tb.AccountFlags.LINKED` in `flags` (except the last transfer) to achieve atomic behavior. I will also put the UUID as the `id` of the first transfer to enforce uniqueness and idempotency.
 
 
-I will not have a fixed number of transfers, I want to have my transfers arbitrary based on transaction kind: that means no clever ID generation schema, and I might choose when to store some transfers of 0 and when to skip to avoid noise. Whenever I need to know the exact transfers and their IDs, I will use the [`lookup_transfers`](https://docs.tigerbeetle.com/reference/requests/lookup_transfers/) and find transfers by `user_data_128`. I will recognize the kind of transfer by the value of `code`. That's an extra read operation, but I'm willing to pay it. Now, about some more interesting features.
+I will not have a fixed number of transfers; I want to have my transfers arbitrary based on transaction kind: that means no clever ID generation schema, and I might choose when to store some transfers of 0 and when to skip to avoid noise. Whenever I need to know the exact transfers and their IDs, I will use the [`lookup_transfers`](https://docs.tigerbeetle.com/reference/requests/lookup_transfers/) and find transfers by `user_data_128`. I will recognize the kind of transfer by the value of the `code`. That's an extra read operation, but I'm willing to pay it. Now, about some more interesting features.
 
 
 ### Usage limits
 
-We want to have daily/weekly/monthly limits for certain transaction types. These are easily implemented using pending transfers with [timeouts](https://docs.tigerbeetle.com/reference/transfer/#timeout): you can decrease the available weekly limit with a pending transfer that times out after 7x24x60x60 seconds. Or if you want calendar limits instead of rolling limits, you can calculate seconds until the end of the current week. TigerBeetle will do it’s best to void the transfer once the timeout expires, but it might do it a second or two later. But it is not a problem: existing payment systems are not precise as well and a drift even of several minutes is acceptable.
+We want to have daily/weekly/monthly limits for certain transaction types. These are easily implemented using pending transfers with [timeouts](https://docs.tigerbeetle.com/reference/transfer/#timeout): you can decrease the available weekly limit with a pending transfer that times out after 7x24x60x60 seconds. Or if you want calendar limits instead of rolling limits, you can calculate seconds until the end of the current week. TigerBeetle will do its best to void the transfer once the timeout expires, but it might do it a second or two later. But it is not a problem: existing payment systems are not precise as well, and a drift of even several minutes is acceptable.
 It gets a bit tricky when combined with two-phase transactions out of [two-phase transfers](https://docs.tigerbeetle.com/coding/two-phase-transfers/). You have to read all the transfers that were created within the transaction and post all except transfers used for limits.
 
 
 ### Reversals
 
-Some of the transactions might be reversed, and we must enforce idempotency to avoid reversing them twice. (I am ignoring partial reversals at this point). One way is to generate a unique reversal ID outside TigerBeetle and use it. But that leaves the enforcement of “transaction can be reversed once” to the caller and contradicts our "without OLGP" goal.
+Some of the transactions might be reversed, and we must enforce idempotency to avoid reversing them twice. (I am ignoring partial reversals at this point.) One way is to generate a unique reversal ID outside TigerBeetle and use it. But that leaves the enforcement of “transaction can be reversed once” to the caller and contradicts our "without OLGP" goal.
 A better way is to create a dummy “reversed” transfer of 0 in the original transaction in the pending state (here with the code 42):
 
 ```python
@@ -49,7 +49,7 @@ transfers = [
 errors = client.create_transfers(transfers)
 ```
 
-Once reversal arrives, the first thing is to post (or void) the “reversed” transfer and then proceed with the rest of transfers.
+Once reversal arrives, the first thing is to post (or void) the “reversed” transfer and then proceed with the rest of the transfers.
 
 ```python
 transfers = [
@@ -82,10 +82,10 @@ TigerBeetle ensures that each transfer can be posted or voided exactly once, and
 There are two features that combine in a bit of a surprising way: [linked events](https://docs.tigerbeetle.com/coding/linked-events/) and [two-phase transfers](https://docs.tigerbeetle.com/coding/two-phase-transfers/).
 We can create several linked transfers for them to behave atomically: either all succeed, or all fail. And we can utilize two-phase transfers to implement card transaction-like authorization requests and financial advice.
 We successfully created some linked transfers in pending state. Now to post or void them, each transfer has to be posted or voided individually: the linked transfers no longer behave as linked, although they still have linked flags stored. You can have:
-* both posted and pending transfers in the same linked batch initially
-* some of the pending ones can be voided
-* some of the pending ones can be posted
-* some of the pending ones can stay pending
+* Both posted and pending transfers in the same linked batch initially
+* Some of the pending ones can be voided
+* Some of the pending ones can be posted
+* Some of the pending ones can stay pending
 
 It both helps in some cases (calendar limits) and requires extra work in others.
 
@@ -106,7 +106,7 @@ transfer = tb.Transfer(
 errors = client.create_transfers([transfer])
 ```
 
-It fails with `CreateTransferResult.EXCEEDS_CREDITS` error because account has insufficient balance:
+It fails with `CreateTransferResult.EXCEEDS_CREDITS` error because the account has insufficient balance:
 
 ```python
 [CreateTransfersResult(index=0, result=<CreateTransferResult.EXCEEDS_CREDITS: 54>)]
@@ -200,6 +200,6 @@ Not a huge issue once you wrap your brain around it, but the recipes have to be 
 
 ### Error reporting
 
-TigerBeetle reports just the error code and transfer index to the caller. To make a generic and future-proof error handling that does not rely on the ordering of transfers, we have a function that takes errors and transfers and figures out the correct error code by looking at the error code, transfers `code` field and maybe account IDs. Sometimes `CreateTransferResult.EXCEEDS_CREDITS` means there are insufficient funds, sometimes it means exceeded daily limits, sometimes the requested transaction amount is lower than the transaction fees.
+TigerBeetle reports just the error code and transfer index to the caller. To make a generic and future-proof error handling that does not rely on the ordering of transfers, we have a function that takes errors and transfers and figures out the correct error code by looking at the error code, transfers `code` field, and maybe account IDs. Sometimes `CreateTransferResult.EXCEEDS_CREDITS` means there are insufficient funds; sometimes it means exceeded daily limits, sometimes the requested transaction amount is lower than the transaction fees.
 
 _To be continued._
