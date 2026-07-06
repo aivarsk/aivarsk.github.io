@@ -139,7 +139,7 @@ This returns an empty response:
 
 ### Recipes vs real life
 
-TigerBeetle has several recipes that utilize pending transfers for doing conditional transfers like [balance invariant transfers](https://docs.tigerbeetle.com/coding/recipes/balance-invariant-transfers/). In real life, there are cases where you have to move money through some accounts for traceability or because the accountants said so. I think we first hit it when doing lower and upper bound checks at the same time.
+TigerBeetle has several recipes that utilize pending transfers for doing conditional transfers like [balance invariant transfers](https://docs.tigerbeetle.com/coding/recipes/balance-invariant-transfers/). The main benefit of using pending transfers is an easier cleanup (just void it), and it leaves no persistent traces of posted transfers (every pending and voided transfer is recorded, but at least not in a posted state). In real life, there are cases where you have to move money through some accounts for traceability or because the accountants said so. I think we first hit it when doing lower and upper bound checks at the same time.
 Here’s a simplified example: we want to transfer 1 from account A to B and then back to A. Works fine with the regular transfers:
 
 ```python
