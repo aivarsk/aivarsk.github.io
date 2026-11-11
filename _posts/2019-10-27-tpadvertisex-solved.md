@@ -1,6 +1,6 @@
 ---
 layout: post
-title: tpadvertisex(3c)&#58; a new cool Oracle Tuxedo 12.2 feature that works
+title: "tpadvertisex(3c): a new cool Oracle Tuxedo 12.2 feature that works"
 ---
 
 [I wrote before about `tpadvertisex()` and how it did not work for me](/2019/10/26/tpadvertisex/)
