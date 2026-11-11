@@ -7,9 +7,14 @@ title: Public speaking
 
 What userland utilities won't tell you: uncovering hidden process state in `procfs`
 
-- 2026 SREcon26 Europe/Middle East/Africa @ Dublin, Ireland
+- CyberWiseCon Europe 2027 @ Riga, Latvia
 
 ## Past
+
+What userland utilities won't tell you: uncovering hidden process state in `procfs`
+
+- 2026 SREcon26 Europe/Middle East/Africa @ Dublin, Ireland
+- 2026 The Hack Summit @ Warsaw, Poland
 
 EXPLAIN: make it make sense
 
