@@ -9,7 +9,9 @@
     <div class="container">
       <header class="masthead">
         <p class="prompt">
-          <span class="p-user">aivarsk@t480s</span><span class="p-dim">:</span><span class="p-path">~{% if page.layout == 'post' %}/posts{% endif %}</span><span class="p-dim">$ {% if page.url == '/' %}ls -lt posts/{% elsif page.name %}cat {{ page.name }}{% else %}ls -lt posts/{% endif %}</span>
+          <a href="{{ '/' | relative_url }}" aria-label="Home: all posts">
+            <span class="p-user">aivarsk@t480s</span><span class="p-dim">:</span><span class="p-path">~{% if page.layout == 'post' %}/posts{% endif %}</span><span class="p-dim">$ {% if page.url == '/' %}ls -lt posts/{% elsif page.name %}cat {{ page.name }}{% else %}ls -lt posts/{% endif %}</span>
+          </a>
         </p>
         <nav class="nav">
           <a href="{{ '/about' | relative_url }}">about.txt</a>

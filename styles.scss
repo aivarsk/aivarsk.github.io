@@ -78,6 +78,15 @@ img {
   margin: 0;
   overflow-x: auto;
   white-space: nowrap;
+
+  a {
+    color: inherit;
+
+    &:hover .p-dim,
+    &:focus-visible .p-dim {
+      color: var(--green);
+    }
+  }
 }
 
 .p-user {
