@@ -131,16 +131,18 @@ img {
   font-family: var(--mono);
   font-size: .93rem;
   margin: 0;
+  display: flex;
+  align-items: baseline;
 
   time {
     color: var(--dim);
-    display: inline-block;
-    width: 6.6rem;
-    flex-shrink: 0;
+    flex: 0 0 6.6rem;
   }
 
   a {
     color: var(--bright);
+    flex: 1;
+    min-width: 0;
 
     &:hover {
       color: var(--green);
@@ -380,16 +382,9 @@ pre {
   border: 0;
 }
 
-// Small screens: let the date column wrap, drop excerpt indent
+// Small screens: drop excerpt indent, keep the date column
 
 @media (max-width: 34em) {
-  .entry-head {
-    time {
-      width: auto;
-      padding-right: .6rem;
-    }
-  }
-
   .entry-excerpt {
     padding-left: 0;
     margin-top: .25rem;
