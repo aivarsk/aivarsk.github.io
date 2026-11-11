@@ -3,11 +3,11 @@ layout: page
 title: About
 ---
 
-My name is Aivars Kalvans. I wrote software (C, C++ and Python) that runs on Oracle Database and Tuxedo for more than 18 years. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io).
+My name is Aivars Kalvans. I spent more than 18 years developing payment card software for acquiring and issuing, accounting, and utility payments over mobile phones, ATMs, and POS terminals, most of it in C, C++, and Python running on Oracle Database and Tuxedo. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io). These days I work as a contractor exploring foreign exchange, SWIFT, SEPA, ledgers, and other areas of the FinTech landscape.
 
 I have written a book about developing modern Oracle Tuxedo applications using Python. I also conduct Oracle Tuxedo training for developers and administrators, contact me for more information.
 
-<a href="https://amzn.to/3ljktiH"><img src="https://m.media-amazon.com/images/I/61yT5MMhxDL._SY466_.jpg"></a>
+<a href="https://amzn.to/3ljktiH"><img src="https://m.media-amazon.com/images/I/61yT5MMhxDL._SY466_.jpg" alt="Book cover of Modernizing Oracle Tuxedo Applications with Python"></a>
 
 Some other code I have written both bad and "good enough":
 
@@ -30,6 +30,8 @@ Some contributions to OSS:
 I have given public talks on databases, payments and payment cards, Python, Django, Kafka and other topics. [I keep a list here.](/speaking)
 
 [I have Opinions about how software should be done](/mindset)
+
+Off the keyboard I spend time smashing with BJJ team Jelgava and serving on the Linux team for Latvia in [Locked Shields](https://ccdcoe.org/exercises/locked-shields/).
 
 You can reach me via e-mail: [aivars.kalvans@gmail.com](mailto:aivars.kalvans@gmail.com)
 

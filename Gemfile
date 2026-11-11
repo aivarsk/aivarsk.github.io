@@ -1,1 +1,5 @@
-gem 'jekyll-seo-tag'
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+gem "jekyll-seo-tag"
+gem "jekyll-sitemap"

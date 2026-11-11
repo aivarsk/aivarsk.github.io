@@ -1,28 +1,413 @@
 ---
 # Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
 ---
 
-//
-//                        ___
-//                       /\_ \
-//  _____     ___     ___\//\ \      __
-// /\ '__`\  / __`\  / __`\\ \ \   /'__`\
-// \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
-//  \ \ ,__/\ \____/\ \____//\____\ \____\
-//   \ \ \/  \/___/  \/___/ \/____/\/____/
-//    \ \_\
-//     \/_/
-//
-// Designed, built, and released under MIT license by @mdo. Learn more at
-// https://github.com/poole/poole.
+// Terminal theme for aivarsk.com
+// Palette lifted from the Marp slide theme: black background, gray text,
+// white headings, green links.
 
-@import "base";
-@import "type";
-@import "syntax";
-@import "code";
-@import "layout";
-@import "masthead";
-@import "posts";
-@import "pagination";
-@import "message";
+:root {
+  --bg: #0a0a0a;
+  --fg: #adadad;
+  --bright: #ffffff;
+  --green: #3ecf6a;
+  --dim: #6f6f6f;
+  --line: #262626;
+  --code-bg: #000000;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 46rem;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--bg);
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 1px dashed var(--green);
+    outline-offset: 3px;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+// Masthead
+
+.masthead {
+  font-family: var(--mono);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.prompt {
+  font-size: .95rem;
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.p-user {
+  color: var(--green);
+}
+
+.p-dim {
+  color: var(--dim);
+}
+
+.p-path {
+  color: var(--bright);
+}
+
+.nav {
+  margin-top: .6rem;
+
+  a {
+    color: var(--dim);
+    margin-right: 1.2rem;
+    font-size: .88rem;
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+// Homepage post index
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: .45rem 0;
+  }
+}
+
+.entry-head {
+  font-family: var(--mono);
+  font-size: .93rem;
+  margin: 0;
+
+  time {
+    color: var(--dim);
+    display: inline-block;
+    width: 6.6rem;
+    flex-shrink: 0;
+  }
+
+  a {
+    color: var(--bright);
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+.entry-excerpt {
+  font-size: .88rem;
+  color: var(--dim);
+  margin: .15rem 0 0;
+  padding-left: 6.6rem;
+  line-height: 1.55;
+}
+
+// Posts and pages
+
+.post-title {
+  font-family: var(--mono);
+  color: var(--bright);
+  font-size: 1.55rem;
+  line-height: 1.35;
+  margin: 0 0 .3rem;
+}
+
+.post-meta {
+  font-family: var(--mono);
+  color: var(--dim);
+  font-size: .85rem;
+  margin: 0 0 2.25rem;
+}
+
+.tags {
+  color: var(--green);
+}
+
+.page-title {
+  font-family: var(--mono);
+  color: var(--bright);
+  font-size: 1.55rem;
+  margin: 0 0 1.5rem;
+}
+
+h2, h3, h4 {
+  font-family: var(--mono);
+  color: var(--bright);
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2.25rem 0 -.4rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 -.4rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 1.5rem 0 -.4rem;
+}
+
+p {
+  margin: 1rem 0 0;
+}
+
+.lead {
+  font-size: 1.1rem;
+}
+
+ul, ol {
+  margin: 1rem 0 0;
+  padding-left: 1.5rem;
+
+  li {
+    margin: .25rem 0;
+  }
+}
+
+blockquote {
+  margin: 1.5rem 0 0;
+  padding: .1rem 0 .1rem 1.25rem;
+  border-left: 2px solid var(--green);
+  font-style: italic;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0 0;
+}
+
+table {
+  margin: 1rem 0 0;
+  width: 100%;
+  font-size: .9rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: .4rem .6rem;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  color: var(--bright);
+}
+
+// Code
+
+code, pre {
+  font-family: var(--mono);
+}
+
+code {
+  font-size: .88em;
+  background: #141414;
+  color: #d6d6d6;
+  padding: .1em .35em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border-radius: 4px;
+  margin: 1rem 0 0;
+
+  code {
+    background: none;
+    padding: 0;
+    font-size: .85rem;
+    color: #d6d6d6;
+  }
+}
+
+// Rouge syntax highlighting, tuned to the same palette
+
+.highlight {
+  .c, .cm, .c1, .cs, .cp { color: var(--dim); font-style: italic; }
+  .err { color: #f14c4c; }
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .nt, .ow { color: var(--green); }
+  .o { color: var(--fg); }
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss { color: #d8a657; }
+  .m, .mf, .mh, .mi, .mo, .il { color: #d8a657; }
+  .na, .nf { color: var(--bright); }
+  .nb, .bp { color: #6ac2b8; }
+  .nc, .nn, .no, .nd { color: #6ac2b8; }
+  .nv, .vc, .vg, .vi, .nl, .ni, .ne { color: var(--fg); }
+  .gd { color: #f14c4c; }
+  .gi { color: var(--green); }
+  .gh, .gu { color: var(--bright); }
+  .go, .gp, .w { color: var(--dim); }
+  .ge { font-style: italic; }
+  .gs { font-weight: bold; }
+  .lineno { color: var(--dim); user-select: none; padding-right: .75rem; }
+}
+
+// Post navigation and related posts
+
+.post-nav {
+  font-family: var(--mono);
+  font-size: .9rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.related {
+  font-family: var(--mono);
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+
+  h2 {
+    font-size: .95rem;
+    color: var(--dim);
+    margin: 0 0 .75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: .9rem;
+  }
+
+  time {
+    color: var(--dim);
+    padding-right: 1rem;
+  }
+
+  a {
+    color: var(--bright);
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+// Footer
+
+.footer {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--dim);
+  border-top: 1px solid var(--line);
+  margin-top: 3rem;
+  padding-top: 1rem;
+
+  a {
+    color: var(--dim);
+
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+// Accessibility helper
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Small screens: let the date column wrap, drop excerpt indent
+
+@media (max-width: 34em) {
+  .entry-head {
+    time {
+      width: auto;
+      padding-right: .6rem;
+    }
+  }
+
+  .entry-excerpt {
+    padding-left: 0;
+    margin-top: .25rem;
+  }
+}
+
+// Printing a dark theme: flip to light
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    max-width: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .masthead .nav, .footer {
+    display: none;
+  }
+
+  pre, code {
+    background: #f2f2f2;
+    color: #000;
+    border-color: #ccc;
+  }
+}

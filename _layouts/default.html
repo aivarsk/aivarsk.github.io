@@ -4,25 +4,27 @@
   {% include head.html %}
 
   <body>
+    <a class="visually-hidden" href="#content">Skip to content</a>
 
-    <div class="container content">
+    <div class="container">
       <header class="masthead">
-          <a href="{{ site.baseurl }}/" title="Home"><i class="fa-3x fas fa-link"></i></a>
-          <a href="/about"><i class="fa-3x fas fa-male"></i></a>
-          <a href="mailto:aivars.kalvans@gmail.com" rel="nofollow"><i class="fa-2x fas fa-at"></i></a>
-          <a href="https://github.com/aivarsk" rel="nofollow"><i class="fa-2x fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/aivarsk" rel="nofollow"><i class="fa-2x fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/aivarskalvans" rel="nofollow"><i class="fa-2x fab fa-twitter"></i></a>
+        <p class="prompt">
+          <span class="p-user">aivarsk@t480s</span><span class="p-dim">:</span><span class="p-path">~{% if page.layout == 'post' %}/posts{% endif %}</span><span class="p-dim">$ {% if page.url == '/' %}ls -lt posts/{% elsif page.name %}cat {{ page.name }}{% else %}ls -lt posts/{% endif %}</span>
+        </p>
+        <nav class="nav">
+          <a href="{{ '/about' | relative_url }}">about.txt</a>
+          <a href="{{ '/speaking' | relative_url }}">speaking.txt</a>
+          <a href="{{ '/resume' | relative_url }}">resume.txt</a>
+          <a href="{{ '/atom.xml' | relative_url }}">rss.xml</a>
+        </nav>
       </header>
 
-      <main>
+      <main id="content">
         {{ content }}
       </main>
 
       <footer class="footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
-        </small>
+        <p><span class="p-user">aivarsk@t480s</span><span class="p-dim">:~$ echo</span> © {{ site.time | date: '%Y' }} Aivars Kalvāns <span class="p-dim">#</span> <a href="https://github.com/aivarsk" rel="nofollow">github</a> <a href="https://www.linkedin.com/in/aivarsk" rel="nofollow">linkedin</a> <a href="mailto:{{ site.author.email }}" rel="nofollow">email</a> <a href="{{ '/atom.xml' | relative_url }}">rss</a></p>
       </footer>
     </div>
 

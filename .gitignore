@@ -40,3 +40,7 @@ validation-report.json
 
 # Folders to ignore
 node_modules
+tmp
+
+# Local files not for publication
+Edit your public profile _ LinkedIn.pdf

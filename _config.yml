@@ -1,19 +1,22 @@
 title: Aivars Kalvāns
-tagline: Tinkering with Oracle Tuxedo and other software
-description: Tinkering with Oracle Tuxedo and other software
-url: http://aivarsk.com
-paginate: 1
+tagline: Payment systems, ledgers, databases, and the Linux underneath
+description: >-
+  Notes on building payment systems that don't lose money: double-entry
+  accounting, Oracle Tuxedo, TigerBeetle, database performance, Python,
+  and Linux observability.
+url: "https://aivarsk.com"
 baseurl: ""
 permalink: pretty
+lang: en
 
 sass:
   sass_dir:          _sass
-  style:            :compressed
+  style:            compressed
 
 # About/contact
 author:
   name:              Aivars Kalvāns
-  url:               http://aivarsk.com
+  url:               https://aivarsk.com
   email:             aivars.kalvans@gmail.com
 
 social:
@@ -24,12 +27,23 @@ social:
     - https://stackoverflow.com/story/aivarsk
     - https://twitter.com/aivarskalvans
 
+twitter:
+  username: aivarskalvans
+
 plugins:
-  - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.md
+  - tmp
+  - "Edit your public profile _ LinkedIn.pdf"
 
-collections:
-  tags:
-    output: true
-    permalink: tags/:path/
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /public/og-default.png
