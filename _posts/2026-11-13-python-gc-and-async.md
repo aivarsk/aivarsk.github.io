@@ -40,11 +40,11 @@ gc.callbacks.append(_record_gc_pause)
 ```
 
 
-To make things a bit better, I use [`gc.freeze`](https://docs.python.org/3/library/gc.html#gc.freeze). After startup but right before starting to handle incoming requests, I force a full garbage collection and move all objects to permanent generation so the following 2nd generation collection cycles do not touch them. That takes care of all imported modules, configuration, etc. Reference cycles involving frozen objects still won't get collected but that is an acceptable risk.
+To make things a bit better, I use [`gc.freeze`](https://docs.python.org/3/library/gc.html#gc.freeze). After startup but right before starting to handle incoming requests, I force a full garbage collection and move all objects to permanent generation so the following 2nd generation collection cycles do not touch them. That takes care of all imported modules, configuration, etc. Reference cycles involving frozen objects won't get collected but that is an acceptable risk.
 
 ```python
-    gc.collect()
-    gc.freeze()
+gc.collect()
+gc.freeze()
 ```
 
 
