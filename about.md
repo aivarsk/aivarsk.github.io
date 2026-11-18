@@ -5,9 +5,9 @@ title: About
 
 My name is Aivars Kalvans. I spent more than 18 years developing payment card software for acquiring and issuing, accounting, and utility payments over mobile phones, ATMs, and POS terminals, most of it in C, C++, and Python running on Oracle Database and Tuxedo. I tinker with internals of Oracle and various other software and develop [an Open Source alternative to Oracle Tuxedo](https://github.com/fuxedo/fuxedo) called [Fuxedo](http://fuxedo.io). These days I work as a contractor exploring foreign exchange, SWIFT, SEPA, ledgers, and other areas of the FinTech landscape.
 
-I have written a book about developing modern Oracle Tuxedo applications using Python. I also conduct Oracle Tuxedo training for developers and administrators, contact me for more information.
+I have written a book about developing modern Oracle Tuxedo applications using Python and maintain [tuxedo-python](https://aivarsk.com/tuxedo-python/), the Python bindings for Oracle Tuxedo and Fuxedo. I also conduct [Oracle Tuxedo training](https://aivarsk.com/tuxedo-training/) for developers and administrators, contact me for more information.
 
-<a href="https://amzn.to/3ljktiH"><img src="https://m.media-amazon.com/images/I/61yT5MMhxDL._SY466_.jpg" alt="Book cover of Modernizing Oracle Tuxedo Applications with Python"></a>
+<a href="https://amzn.to/3ljktiH"><img src="{{ site.url }}/public/book-cover.jpg" alt="Book cover of Modernizing Oracle Tuxedo Applications with Python"></a>
 
 Some other code I have written both bad and "good enough":
 

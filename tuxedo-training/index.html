@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oracle Tuxedo Training - Internals, Debugging, Python Modernization | Aivars Kalvans</title>
+<meta name="description" content="Hands-on Oracle Tuxedo training by Aivars Kalvans, author of Modernizing Oracle Tuxedo Applications with Python. Two decades of C++ Tuxedo systems in production, system-call level internals, debugging bootcamps, /Q, MIB, distributed transactions, MSSQ. Two or three days, optionally tailored to your system. Fuxedo, ipcqmon, and real monitoring tooling included.">
+<meta name="keywords" content="Oracle Tuxedo training, Tuxedo course, Tuxedo internals, Tuxedo debugging, Tuxedo Python training, XATMI training, FML32 training, tmboot tmadmin training, Tuxedo monitoring, Tuxedo performance tuning, Tuxedo modernization, Fuxedo, tuxedo-python">
+<link rel="canonical" href="https://aivarsk.github.io/tuxedo-training/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aivarsk.github.io/tuxedo-training/">
+<meta property="og:title" content="Oracle Tuxedo Training - Internals, Debugging, Python Modernization">
+<meta property="og:description" content="Tuxedo training from someone who has traced the syscalls and kept C++ Tuxedo applications alive for two decades. 2-3 days, hands-on, customer-specific options.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle Tuxedo Training by Aivars Kalvans">
+<meta name="twitter:description" content="Beyond the official docs: internals, syscall-level behavior, debugging, Python modernization. 2-3 days, hands-on.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Modernizing Oracle Tuxedo with Python - instructor-led training",
+  "description": "Hands-on Oracle Tuxedo training: building and operating XATMI applications, typed buffers, MIB administration, distributed transactions, /Q queues, C++ internals, and debugging. Delivered by the author of Modernizing Oracle Tuxedo Applications with Python.",
+  "provider": {
+    "@type": "Person",
+    "name": "Aivars Kalvans",
+    "url": "https://aivarsk.github.io/tuxedo-training/"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "onsite",
+    "courseWorkload": "P2D"
+  }
+}
+</script>
+<style>
+  body { background: #e9e4d3;
+         font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a;
+         margin: 0; padding: 2.5em 1.2em; line-height: 1.55; }
+  .page { max-width: 46em; margin: 0 auto; background: #fbf7ea;
+          border: 1px solid #8f8871;
+          box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #b3ab90,
+                      3px 3px 0 rgba(0,0,0,0.12);
+          padding: 2.2em 2.6em; }
+  h1 { text-align: center; margin-bottom: 0; font-size: 1.9em; color: #14120c; }
+  .tagline { text-align: center; font-style: italic; color: #5c5540;
+             margin-top: 0.2em; font-family: 'Courier New', monospace; }
+  h2 { font-size: 0.95em; margin-top: 2em;
+       font-family: 'Courier New', monospace; font-weight: bold;
+       background: #10312a; color: #9fe8b0; padding: 5px 10px;
+       border: 1px solid #0a201b;
+       box-shadow: inset 1px 1px 0 #2a5a4c, inset -1px -1px 0 #071a15; }
+  a { color: #8f1d14; }
+  a:hover { color: #c0392b; }
+  .button { display: block; text-align: center; margin: 2.2em 0; }
+  .button a { display: inline-block; background: #ded8c2; color: #14120c;
+              padding: 0.55em 1.6em; text-decoration: none; font-size: 1.05em;
+              font-family: 'Courier New', monospace; font-weight: bold;
+              border: 2px solid;
+              border-color: #ffffff #6f6852 #6f6852 #ffffff; }
+  .button a:hover { background: #eae4cf; }
+  .button a:active { border-color: #6f6852 #ffffff #ffffff #6f6852; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92em; }
+  th, td { text-align: left; padding: 0.3em 0.6em; border-bottom: 1px solid #cfc7ab; }
+  th { font-family: 'Courier New', monospace; background: #efe9d6; }
+  .day { font-family: 'Courier New', monospace; font-weight: bold; }
+  code { background: #efe9d6; padding: 0 4px; border: 1px solid #cfc7ab;
+         font-size: 0.92em; }
+  footer { margin-top: 3em; font-size: 0.9em; color: #5c5540;
+           border-top: 1px solid #b3ab90; padding-top: 1em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Oracle Tuxedo Training</h1>
+<p class="tagline">The parts that matter, taught from the inside</p>
+
+<p>I am <strong>Aivars Kalvans</strong>, author of
+<a href="https://amzn.to/3ljktiH">Modernizing Oracle Tuxedo Applications
+with Python</a>, and I have spent close to two decades building and
+supporting C++ applications on Oracle Tuxedo in production, in an
+environment where downtime is measured in money and the queues never
+sleep. This is a hands-on, instructor-led training about the Tuxedo that
+real systems use, not a recital of the manuals.</p>
+
+<p>You will not just learn <em>that</em> it works. You will learn
+<em>how</em> it works: which system calls a service call makes, where a
+request waits when a queue backs up, what the BBL is doing while you
+sleep, why a full queue turns into one-second sleeps that bubble up
+through your whole domain, and which C++ mistakes kill servers in
+production. I trace this stuff with <code>strace</code>, <code>gdb</code>,
+and <code>bpftrace</code> for a living, and the training shows you the
+same lens.</p>
+
+<p>Along the way you will also meet the tooling I build around this
+world: <a href="https://github.com/fuxedo/fuxedo">Fuxedo</a>, my open
+source reimplementation of the Tuxedo API (building one is the most
+thorough way to learn the semantics), <code>ipcqmon</code> for queue
+latency from eBPF, and the <code>tuxedo-python</code> bindings that the
+<a href="https://aivarsk.com/tuxedo-python/">tuxedo-python
+bindings</a> that the book and the labs are built on. The monitoring
+side comes from the same school: I have designed and run my own TSAM-style instrumentation
+that hooks into Tuxedo at the same extension points Oracle TSAM uses,
+and productionized it. That experience is why the monitoring chapter is
+about mechanics, not dashboards.</p>
+
+<h2>Formats</h2>
+
+<table>
+<tr><th>Format</th><th>Content</th></tr>
+<tr><td class="day">2 days</td><td>Days 1 and 2 below: build and operate a
+production-grade Tuxedo application, Python-first, with the reliability
+machinery (MIB, transactions, /Q) that separates a demo from production.
+Half lecture, half labs, everyone boots and debugs their own domain.</td></tr>
+<tr><td class="day">3 days</td><td>Adds Day 3: C++ internals, the memory
+minefield, and a debugging bootcamp (gdb, valgrind, planted bugs).
+The second half of Day 3 is reserved for <strong>your</strong> system:
+bring your failing service, your confusing timeout, your migration
+question, and we take it apart together.</td></tr>
+<tr><td class="day">Custom</td><td>Customer-specific tracks on top of the
+3-day format: high availability and clustering, performance tuning and
+queue behavior, migration paths from legacy C/C++/COBOL clients, security
+levels, cloud-era infrastructure, or domain gateways.</td></tr>
+</table>
+
+<h2>Three days, one story</h2>
+
+<p><span class="day">Day 1. Make it work.</span> From zero to a running,
+load-balanced service: clients, servers, services, UBBCONFIG, tmboot.
+Typed buffers (STRING, CARRAY, FML32) with ud32 and boolean expressions.
+The flag gymnasium: every service-call flag, what it actually does, and a
+lab proving it. Under the hood from the first hour: IPC queues, SSSQ vs
+MSSQ, watching a server die and come back.</p>
+
+<p><span class="day">Day 2. Make it reliable.</span> Administration and
+monitoring through the MIB (tpadmcall, .TMIB) and a monitoring script you
+take home. Distributed transactions: TLOG anatomy, timeout semantics that
+bite people, TPNOTRAN when you do not want in. /Q queues: tpenqueue,
+tpdequeue, message and correlation IDs, TMQFORWARD. Database integration.
+Beyond the LAN: workstation clients, and the showpiece, an HTTP and JSON
+front-end served from inside a Tuxedo server.</p>
+
+<p><span class="day">Day 3. Make it yours.</span> C++ implementation
+details: buffer ownership, what tpreturn really does, the dangling
+pointer and alignment traps. A debugging bootcamp with gdb and valgrind
+against intentionally broken services. Then your systems on the table.</p>
+
+<h2>Why this and not a standard course</h2>
+
+<p>I have been approached before to deliver the standard Oracle Tuxedo
+curriculum, and the materials exist. This training is deliberately
+shaped differently. It is the <strong>Tuxedo good parts</strong>: the
+features that show up in real systems, taught at the level of
+mechanics. Where the official documentation tells you what a call does,
+we look at what the process does: the msgrcv it blocks in, the shared
+memory it locks, the queue depth that explains the latency spike. When
+something misbehaves at 3 a.m., that is the knowledge that gets you home.</p>
+
+<p>Everything is hands-on. Labs run on real booted domains; participants
+break things on purpose and learn to read the wreckage. The Python
+bindings mean the whole curriculum moves fast, but nothing is hidden:
+when it matters, we drop to C to see what the Python is doing for you.</p>
+
+<h2>Who this is for</h2>
+
+<p>Tuxedo developers and maintainers, system administrators, integration
+and migration engineers, teams modernizing legacy ATMI systems. Basic
+Python and Linux command line are enough; the labs carry you through
+the rest.</p>
+
+<p>The training doubles as a low-risk evaluation point for teams weighing
+their options: because I build Fuxedo and the Python bindings, you also
+get an honest, practical view of migration paths away from license
+pressure, without the sales pitch.</p>
+
+<p class="button"><a href="mailto:aivars.kalvans@gmail.com">Ask about
+dates and on-site delivery</a></p>
+
+<footer>
+<p>Delivered on-site or remote, in English. Materials based on the book
+<a href="https://amzn.to/3ljktiH">Modernizing Oracle Tuxedo Applications
+with Python</a> (Packt, 2021) and twenty years of production scars.
+Oracle Tuxedo is a trademark of Oracle Corporation; this training is
+independent and not affiliated with or endorsed by Oracle.</p>
+</footer>
+
+</div>
+</body>
+</html>
