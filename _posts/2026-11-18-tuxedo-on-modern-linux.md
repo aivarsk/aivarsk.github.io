@@ -21,4 +21,4 @@ After that you can clear the executable-stack flag on the `PT_GNU_STACK` header:
 patchelf --clear-execstack $TUXDIR/lib/libengine.so $TUXDIR/lib/libsecssl.so
 ```
 
-With those changes applied [tuxedo-python-1.0.12](https://aivarsk.com/tuxedo-python/) is now cross-tested with Oracle Tuxedo 12.2.2, 22.1 and my own [Fuxedo](https://fuxedo.io).
+With those changes applied [tuxedo-python-1.0.12](https://pypi.org/project/tuxedo/) is now cross-tested with Oracle Tuxedo 12.2.2, 22.1 and my own [Fuxedo](https://fuxedo.io).
