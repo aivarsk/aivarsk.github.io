@@ -90,18 +90,24 @@ sleep, why a full queue turns into one-second sleeps that bubble up
 through your whole domain, and which C++ mistakes kill servers in
 production. I trace this stuff with <code>strace</code>, <code>gdb</code>,
 and <code>bpftrace</code> for a living, and the training shows you the
-same lens.</p>
+same lens. When I write a behavior down, I write it down to the system
+calls, like <a
+href="https://aivarsk.com/2020/10/06/tuxedo-queues/">how a full queue
+turns into one-second sleeps that bubble up through the whole
+domain</a> until the clients feel it.</p>
 
 <p>Along the way you will also meet the tooling I build around this
 world: <a href="https://github.com/fuxedo/fuxedo">Fuxedo</a>, my open
 source reimplementation of the Tuxedo API (building one is the most
 thorough way to learn the semantics), <code>ipcqmon</code> for queue
-latency from eBPF, and the <code>tuxedo-python</code> bindings that the
+latency from eBPF, and the
 <a href="https://aivarsk.com/tuxedo-python/">tuxedo-python
 bindings</a> that the book and the labs are built on. The monitoring
-side comes from the same school: I have designed and run my own TSAM-style instrumentation
-that hooks into Tuxedo at the same extension points Oracle TSAM uses,
-and productionized it. That experience is why the monitoring chapter is
+side comes from the same school: I have designed and run my own
+TSAM-style instrumentation that hooks into Tuxedo at the same extension
+points Oracle TSAM uses, and productionized it (<a
+href="https://aivarsk.com/2016/01/21/diy-tuxedo-monitoring/">notes on
+that home-built monitoring</a>). That experience is why the monitoring chapter is
 about mechanics, not dashboards.</p>
 
 <h2>Formats</h2>
@@ -129,13 +135,16 @@ levels, cloud-era infrastructure, or domain gateways.</td></tr>
 load-balanced service: clients, servers, services, UBBCONFIG, tmboot.
 Typed buffers (STRING, CARRAY, FML32) with ud32 and boolean expressions.
 The flag gymnasium: every service-call flag, what it actually does, and a
-lab proving it. Under the hood from the first hour: IPC queues, SSSQ vs
+lab proving it (<a href="https://aivarsk.com/2021/07/07/tpcall-flags/">investigating
+Tuxedo flags</a> is the kind of depth to expect). Under the hood from the first hour: IPC queues, SSSQ vs
 MSSQ, watching a server die and come back.</p>
 
 <p><span class="day">Day 2. Make it reliable.</span> Administration and
 monitoring through the MIB (tpadmcall, .TMIB) and a monitoring script you
 take home. Distributed transactions: TLOG anatomy, timeout semantics that
-bite people, TPNOTRAN when you do not want in. /Q queues: tpenqueue,
+bite people (<a href="https://aivarsk.com/2021/06/21/scanunit/">how
+<code>SCANUNIT</code> and timeouts really interact</a>), TPNOTRAN when
+you do not want in. /Q queues: tpenqueue,
 tpdequeue, message and correlation IDs, TMQFORWARD. Database integration.
 Beyond the LAN: workstation clients, and the showpiece, an HTTP and JSON
 front-end served from inside a Tuxedo server.</p>
@@ -172,6 +181,25 @@ the rest.</p>
 their options: because I build Fuxedo and the Python bindings, you also
 get an honest, practical view of migration paths away from license
 pressure, without the sales pitch.</p>
+
+<h2>Writing on the subject</h2>
+
+<p>The training is backed by years of posts that go down to the system
+calls. A few of them:</p>
+
+<ul>
+<li><a href="https://aivarsk.com/2020/10/06/tuxedo-queues/">Tuxedo
+queues: unlimited vs limited, and the sleep that bubbles up through the
+domain</a></li>
+<li><a href="https://aivarsk.com/2021/07/07/tpcall-flags/">Investigating
+Tuxedo flags: what the tpcall flags actually change</a></li>
+<li><a href="https://aivarsk.com/2021/06/21/scanunit/">SCANUNIT,
+blocking timeouts, and transaction timeouts: the difference that bites
+people</a></li>
+<li><a href="https://aivarsk.com/2016/01/21/diy-tuxedo-monitoring/">DIY
+Tuxedo monitoring: TSAM-style instrumentation on Tuxedo's own extension
+points</a></li>
+</ul>
 
 <p class="button"><a href="mailto:aivars.kalvans@gmail.com">Ask about
 dates and on-site delivery</a></p>
